@@ -16,4 +16,4 @@
 
 # Документация: 
 [ТЗ](https://docs.google.com/document/d/1B5b9zq-DSjuZxXCWawdRFqXIkFupQRgU/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
-[Курсовой проект](https://drive.google.com/drive/folders/1iXX-nkNrjnKz6hVYKLF-8OsXyY7bBznW?usp=sharing)  
+[Курсовой проект](https://docs.google.com/document/d/1uel5kJKrakFmkBBGiDvtu0EdfQFJ_t4c/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
