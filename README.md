@@ -15,5 +15,5 @@
 [Miro (App architecture)](https://miro.com/app/board/uXjVMbiC6pc=/?share_link_id=458892867192)  
 
 # Документация: 
-[ТЗ](https://docs.google.com/document/d/1B5b9zq-DSjuZxXCWawdRFqXIkFupQRgU/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
+[Техническое задание](https://docs.google.com/document/d/1228k3y93YH3LVVTCHPbcEfbmwalZz4NA/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
 [Курсовой проект](https://docs.google.com/document/d/1uel5kJKrakFmkBBGiDvtu0EdfQFJ_t4c/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
