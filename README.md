@@ -16,4 +16,5 @@
 
 # Документация: 
 [Техническое задание](https://docs.google.com/document/d/1228k3y93YH3LVVTCHPbcEfbmwalZz4NA/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
+[Техническое задание с диаграммами](https://docs.google.com/document/d/1wh3F7_nDOtC5FdGBcnFpBjiT3ZxzKr7L/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
 [Курсовой проект](https://docs.google.com/document/d/1uel5kJKrakFmkBBGiDvtu0EdfQFJ_t4c/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
