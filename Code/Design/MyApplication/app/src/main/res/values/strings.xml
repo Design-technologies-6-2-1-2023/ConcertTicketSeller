@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="logo_text">Калькулятор</string>
+    <string name="enter2">Введите второе число</string>
+
+    <string name="enter">Введите первое число</string>
+    <string name="name">Name</string>
+
+    <string name="BigTextWelcomePage1">Мероприятия на любой вкус</string>
+    <string name="SmallTextWelcomePage1">Спектакли, концерты, мюзиклы, выставки, экскурсии, балет и многое другое</string>
+    <string name="NextWelcomePage1">Далее</string>
+
+    <string name="BigTextWelcomePage2">Бесплатное и простое бронирование</string>
+    <string name="SmallTextWelcomePage2">Оформить бронирование можно меньше, чем за минуту, а это ещё и бесплатно!</string>
+    <string name="NextWelcomePage2">Далее</string>
+
+    <string name="BigTextWelcomePage3">Покупка без сервисного сбора</string>
+    <string name="SmallTextWelcomePage3">Билеты доступны без сервисного сбора для ещё большей экономии!</string>
+    <string name="NextWelcomePage3">Далее</string>
+
+
+    <string name="BigTextWelcomePage4">Кем вы являетесь, пользуясь приложением?</string>
+    <string name="NextWelcomePage4">Далее</string>
+
+    <string name="NextWelcomePage5Byer">Я - Покупатель</string>
+    <string name="NextWelcomePage5Org">Я - Организатор</string>
+
+    <string name="BigTextWelcomePage6">Осталось только выбрать город</string>
+
+    <string name="NextWelcomePage7VRN">Воронеж</string>
+    <string name="NextWelcomePage7MSK">Москва</string>
+    <string name="NextWelcomePage7SPB">Санкт-Петербург</string>
+    <string name="NextWelcomePage7">Выбрать</string>
+
+
+
+
+</resources>
