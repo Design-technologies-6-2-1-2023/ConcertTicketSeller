@@ -11,23 +11,56 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+
         <activity
-            android:name=".WelcomePage7ChooseCity"
+            android:name="NAUser.Catalog"
+            android:exported="false"
+            tools:ignore="MissingClass" />
+        <activity
+            android:name=".Organization.ui.login.RecoverPasswordOrg"
             android:exported="false" />
         <activity
-            android:name=".WelcomePage6"
+            android:name=".Organization.ui.login.Error.ErrorUncorrectPassword"
+            android:exported="false"
+            tools:ignore="MissingClass" />
+        <activity
+            android:name=".Organization.ui.login.Error.ErrorNoLogin"
+            android:exported="false"
+            tools:ignore="MissingClass" />
+        <activity
+            android:name=".Organization.ui.login.AvtorizeOrg"
             android:exported="false" />
         <activity
-            android:name=".WelcomePage5ChooseRole"
+            android:name=".Organization.ui.login.Error.ConnectToManager"
+            android:exported="false"
+            tools:ignore="MissingClass" />
+        <activity
+            android:name=".Organization.ui.login.Error.ErrorEnter"
+            android:exported="false"
+            tools:ignore="MissingClass" />
+        <activity
+            android:name=".ByerRegister.ui.login.RegisterOrg"
             android:exported="false" />
         <activity
-            android:name=".WelcomePage4"
+            android:name=".ChooseRegOrAvt"
             android:exported="false" />
         <activity
-            android:name=".WelcomePage3"
+            android:name=".WelcomePage.WelcomePage7ChooseCity"
             android:exported="false" />
         <activity
-            android:name=".WelcomePage2"
+            android:name=".WelcomePage.WelcomePage6"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomePage.WelcomePage5ChooseRole"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomePage.WelcomePage4"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomePage.WelcomePage3"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomePage.WelcomePage2"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

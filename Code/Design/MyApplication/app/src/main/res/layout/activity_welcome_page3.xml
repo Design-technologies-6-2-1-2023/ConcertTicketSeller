@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroud"
-    tools:context=".WelcomePage3">
+    tools:context=".WelcomePage.WelcomePage3">
     <TextView
         android:id="@+id/textView"
         android:layout_width="351dp"

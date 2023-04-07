@@ -32,7 +32,49 @@
     <string name="NextWelcomePage7SPB">Санкт-Петербург</string>
     <string name="NextWelcomePage7">Выбрать</string>
 
+    <string name="EnterUp">Войти</string>
+    <string name="Register">Зарегистрироваться</string>
+    <string name="Avtorize">Войти</string>
 
+    <string name="RegistrationUp">Регистрация</string>
+
+    <string name="RegistrationSurname">Фамилия</string>
+
+    <string name="RegistrationName">Имя</string>
+
+    <string name="RegistrationLogin">Логин</string>
+
+    <string name="RegistrationEmail">Email</string>
+
+    <string name="RegistrationPhone">Номер  телефона</string>
+
+    <string name="RegistrationPassword">Пароль</string>
+
+    <string name="RegistrationPasswordRepeat">Подтверждение пароля</string>
+
+    <string name="Error">Ой, ошибочка вышла! Некорректно введены данные</string>
+
+    <string name="ButtonBack">Назад</string>
+
+    <string name="ConnectToManage">Ваша заявка на рассмотрении! В ближайшее время с Вами свяжется наш менеджер</string>
+
+    <string name="AvtorizationUp">Авторизация</string>
+
+    <string name="Login">Логин</string>
+
+    <string name="ForgotPassword">Забыли пароль</string>
+
+    <string name="ErrorNoLogin">Ой, ошибочка вышла! Не найдено аккаунта с таким логином</string>
+
+    <string name="ErrorUncorrectPassword">Ой, ошибочка вышла!
+Возможно Вы:
+ 1) Некорректно ввели логин или пароль
+2) Ваш аккаунт находится на стадии рассмотрения</string>
+
+    <string name="RepeatPassword">Попробовать еще раз</string>
+    <string name="RecoverPassword">Восстановить пароль</string>
+    <string name="RecoverPasswordUp">Восстановление пароля</string>
+    <string name="Recover">Восстановить</string>
 
 
 </resources>
