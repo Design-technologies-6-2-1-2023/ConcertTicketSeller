@@ -3,8 +3,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.ByerUi.EventModal
 import com.example.myapplication.R
 
 
@@ -25,6 +27,8 @@ class EventRVAdapter
         holder.EventDate.text = modal.EventDate
         holder.costTV.text= modal.cost.toString()
         holder.EventTitle.text=modal.EventTitle
+        holder.ImageViewMy.setImageResource(modal.image)
+
     }
 
     override fun getItemCount(): Int {
@@ -37,11 +41,16 @@ class EventRVAdapter
         val costTV:TextView
         val EventTitle:TextView
 
+        val ImageViewMy: ImageView
+
+
         init {
             EventDate = itemView.findViewById(R.id.idDate)
             EventLocation = itemView.findViewById(R.id.idEventLoc)
             costTV=itemView.findViewById(R.id.idCost)
             EventTitle=itemView.findViewById(R.id.idEventTitle)
+            ImageViewMy=itemView.findViewById(R.id.imageViewMy)
+
         }
     }
 }

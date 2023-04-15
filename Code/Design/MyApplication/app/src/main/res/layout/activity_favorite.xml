@@ -1,107 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ByerUi.CatalogRealization.Catalog"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="458dp"
-        android:layout_height="128dp"
+        android:id="@+id/header"
+        android:layout_width="443dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
         android:background="@color/backgroud"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="-17dp" >
-
-
+        tools:layout_editor_absoluteX="-32dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="74dp"
-            android:layout_marginTop="92dp"
-            android:text="Уточнение и сортировка"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-
-        <ImageButton
-            android:id="@+id/filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginBottom="9dp"
-            android:background="@color/backgroud"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/filter_qgnfx" />
+            android:layout_margin="5dp"
+            android:hint="@string/favorite"
+            android:textColorHint="@color/white"
+            android:textColor="#000"
+            android:textSize="20sp" />
     </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/find"
-        android:layout_width="372dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/find"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/findEvent"
-            android:layout_width="343dp"
-            android:layout_height="match_parent"
-            android:inputType="textPassword"
-            />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="16dp"
-            android:layout_height="28dp"
-
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="3dp"
-            android:layout_marginBottom="10dp"
-            app:srcCompat="@drawable/search_interface_symbol" />
-
-    </RelativeLayout>
-
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="129dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/myutton"
-        android:hint="@string/EnterUp"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idRVNewsCategories"
-        android:layout_width="411dp"
-        android:layout_height="533dp"
+        android:id="@+id/list"
+        android:layout_width="414dp"
+        android:layout_height="495dp"
 
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.413"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
@@ -135,10 +69,10 @@
             android:layout_height="77dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="2dp"
-            android:layout_marginBottom="28dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="29dp"
             android:background="@color/white"
-            app:srcCompat="@drawable/ticketease__6__transformed_y6kxh" />
+            app:srcCompat="@drawable/ylmc354j_mjqp5" />
 
         <TextView
             android:id="@+id/textView7"
@@ -200,15 +134,15 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/favoriteButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="83dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="97dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginStart="96dp"
+            android:layout_marginBottom="25dp"
             android:background="@color/white"
-            app:srcCompat="@drawable/like_3ekrj_r0g6s" />
+            app:srcCompat="@drawable/like__1__dd8ry" />
 
         <ImageButton
             android:id="@+id/imageButton8"
@@ -245,6 +179,5 @@
 
 
     </RelativeLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

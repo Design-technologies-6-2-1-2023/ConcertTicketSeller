@@ -54,6 +54,7 @@ class CategoriesRVAdapter
         val categoryTV: TextView
         val newsCV: CardView
 
+
         init {
             newsCV = itemView.findViewById(R.id.idCVCategory)
             categoryTV = itemView.findViewById(R.id.idTVCategory)

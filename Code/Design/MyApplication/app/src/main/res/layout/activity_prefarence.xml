@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ByerUi.CatalogRealization.Catalog"
-    >
-
+    tools:context=".ByerUi.PreferanceRealization.Prefarence">
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="458dp"
@@ -77,31 +75,16 @@
     </RelativeLayout>
 
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="129dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/myutton"
-        android:hint="@string/EnterUp"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idRVNewsCategories"
-        android:layout_width="411dp"
-        android:layout_height="533dp"
+        android:id="@+id/list"
+        android:layout_width="412dp"
+        android:layout_height="418dp"
 
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.413"
+        android:layout_marginTop="16dp"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
@@ -138,7 +121,7 @@
             android:layout_marginStart="2dp"
             android:layout_marginBottom="28dp"
             android:background="@color/white"
-            app:srcCompat="@drawable/ticketease__6__transformed_y6kxh" />
+            app:srcCompat="@drawable/ylmc354j_mjqp5" />
 
         <TextView
             android:id="@+id/textView7"
@@ -200,7 +183,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/favoriteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -219,7 +202,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="157dp"
             android:background="@color/white"
-            app:srcCompat="@drawable/ticketease__7__transformed_2qcvo" />
+            app:srcCompat="@drawable/qyv16bev_kxg8u" />
 
         <ImageButton
             android:id="@+id/imageButton9"
@@ -245,6 +228,4 @@
 
 
     </RelativeLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

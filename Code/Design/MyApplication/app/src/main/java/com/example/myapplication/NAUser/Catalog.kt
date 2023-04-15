@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.ByerUi.CatalogRealization.CategoriesModal
 import com.example.myapplication.ByerUi.CatalogRealization.CategoriesRVAdapter
-import com.example.myapplication.ByerUi.CatalogRealization.EventModal
+import com.example.myapplication.ByerUi.EventModal
 import com.example.myapplication.R
 
 class Catalog : AppCompatActivity(), View.OnClickListener {
@@ -34,7 +34,7 @@ class Catalog : AppCompatActivity(), View.OnClickListener {
                 "qq ",
                 "qq.",
                 5,
-                "cccw"
+                "cccw", R.drawable.vkz
             )
         )
 
@@ -46,7 +46,7 @@ class Catalog : AppCompatActivity(), View.OnClickListener {
                 "AB ",
                 "AB ",
                 2,
-                "qwqwwdwd"
+                "qwqwwdwd",R.drawable.vkz
             )
         )
 
@@ -59,7 +59,7 @@ class Catalog : AppCompatActivity(), View.OnClickListener {
                 "ee ",
                 "ee ",
                 99
-                ,"ccaw"
+                ,"ccaw",R.drawable.vkz
             )
         )
 

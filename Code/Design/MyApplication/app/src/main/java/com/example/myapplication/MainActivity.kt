@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.ByerUi.Catalog
+import com.example.myapplication.ByerUi.CatalogRealization.Catalog
 import com.example.myapplication.WelcomePage.WelcomePage2
 
 

@@ -75,6 +75,7 @@
     <string name="RecoverPassword">Восстановить пароль</string>
     <string name="RecoverPasswordUp">Восстановление пароля</string>
     <string name="Recover">Восстановить</string>
+    <string name="favorite">Избранное</string>
 
 
 </resources>
