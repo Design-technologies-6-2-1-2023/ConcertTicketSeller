@@ -9,73 +9,14 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication"
+        android:theme="@style/Theme.TestCompose"
         tools:targetApi="31">
-        <activity
-            android:name=".ByerUi.PreferanceRealization.Prefarence"
-            android:exported="false" />
-        <activity
-            android:name=".ByerUi.EvenFavoritetRealization.EventAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".ByerUi.EvenFavoritetRealization.Favorite"
-            android:exported="false" />
-        <activity
-            android:name=".ByerUi.CatalogRealization.Catalog"
-            android:exported="false" />
-        <activity
-            android:name="NAUser.Catalog"
-            android:exported="false"
-            tools:ignore="MissingClass" />
-        <activity
-            android:name=".Organization.ui.login.RecoverPasswordOrg"
-            android:exported="false" />
-        <activity
-            android:name=".Organization.ui.login.Error.ErrorUncorrectPassword"
-            android:exported="false"
-            tools:ignore="MissingClass" />
-        <activity
-            android:name=".Organization.ui.login.Error.ErrorNoLogin"
-            android:exported="false"
-            tools:ignore="MissingClass" />
-        <activity
-            android:name=".Organization.ui.login.AvtorizeOrg"
-            android:exported="false" />
-        <activity
-            android:name=".Organization.ui.login.Error.ConnectToManager"
-            android:exported="false"
-            tools:ignore="MissingClass" />
-        <activity
-            android:name=".Organization.ui.login.Error.ErrorEnter"
-            android:exported="false"
-            tools:ignore="MissingClass" />
-        <activity
-            android:name=".ByerRegister.ui.login.RegisterOrg"
-            android:exported="false" />
-        <activity
-            android:name=".ChooseRegOrAvt"
-            android:exported="false" />
-        <activity
-            android:name=".WelcomePage.WelcomePage7ChooseCity"
-            android:exported="false" />
-        <activity
-            android:name=".WelcomePage.WelcomePage6"
-            android:exported="false" />
-        <activity
-            android:name=".WelcomePage.WelcomePage5ChooseRole"
-            android:exported="false" />
-        <activity
-            android:name=".WelcomePage.WelcomePage4"
-            android:exported="false" />
-        <activity
-            android:name=".WelcomePage.WelcomePage3"
-            android:exported="false" />
-        <activity
-            android:name=".WelcomePage.WelcomePage2"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.TestCompose">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
