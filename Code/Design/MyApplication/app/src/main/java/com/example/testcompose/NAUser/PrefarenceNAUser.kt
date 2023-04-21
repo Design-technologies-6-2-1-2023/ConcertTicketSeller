@@ -14,11 +14,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.testcompose.R
 import com.example.testcompose.SomeItems.Item
 import com.example.testcompose.SomeItems.NavigationItem
 
 @Composable
-fun Prefarence(navController: NavHostController) {
+fun PrefarenceNAUSer(navController: NavHostController) {
     Column() {
         Box(
 
@@ -73,7 +74,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable.xkqmspc),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).clickable(){
-                                    navController.navigate(NavigationItem.Catalog.route)
+                                    navController.navigate(NavigationItem.CatalogNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -87,7 +88,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable.like_3ekrj),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp). clickable(){
-                                    navController.navigate(NavigationItem.Favorite.route)
+                                    navController.navigate(NavigationItem.FavoriteNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -101,7 +102,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable.dscds),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).clickable(){
-                                    navController.navigate(NavigationItem.Prefarence.route)
+                                    navController.navigate(NavigationItem.PrefarenceNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -115,7 +116,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable.free_icon_shopping_cart_481384_bhbaq__1__0phyx),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).clickable(){
-                                    navController.navigate(NavigationItem.Cart.route)
+                                    navController.navigate(NavigationItem.CartNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -129,7 +130,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable._dnq1pfj_transformed_oo6wt),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).clickable(){
-                                    navController.navigate(NavigationItem.Personal.route)
+                                    navController.navigate(NavigationItem.PersonalNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -142,6 +143,6 @@ fun Prefarence(navController: NavHostController) {
     }
 }
 @Composable
-fun PrefarenceScreenPreview(navController: NavHostController) {
-    Prefarence(navController)
+fun PrefarenceNAUserScreenPreview(navController: NavHostController) {
+    PrefarenceNAUSer(navController)
 }

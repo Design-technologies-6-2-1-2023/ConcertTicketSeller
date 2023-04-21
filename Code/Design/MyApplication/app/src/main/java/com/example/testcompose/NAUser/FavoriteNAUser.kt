@@ -2,7 +2,11 @@ package com.example.testcompose
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Card
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -16,10 +20,10 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.testcompose.SomeItems.Item
 import com.example.testcompose.SomeItems.NavigationItem
-
 @Composable
-fun Prefarence(navController: NavHostController) {
+fun FavoriteNAUser(navController: NavHostController) {
     Column() {
+
         Box(
 
             modifier = Modifier
@@ -27,7 +31,7 @@ fun Prefarence(navController: NavHostController) {
                 .height(150.dp).fillMaxWidth(),
             contentAlignment = Alignment.Center) {
             Column(  modifier = Modifier.padding(50.dp)) {
-                Text("Предпочтения", fontSize = 35.sp, color = Color.White)
+                Text("Избранное", fontSize = 35.sp, color = Color.White)
 
             }
         }
@@ -51,7 +55,7 @@ fun Prefarence(navController: NavHostController) {
                     val i = Item("cdc", "dcdcdsc", 5, "dcdc", R.drawable.vkz, StatusEvent.Planned)
                     val list = listOf<Item>(i, i, i)
                     for (l in list)
-                        ListItem(
+                        ListItemFavorite(
                             cost = l.cost.toString(),
                             location = l.EventLocation,
                             date = l.EventDate,
@@ -73,7 +77,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable.xkqmspc),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).clickable(){
-                                    navController.navigate(NavigationItem.Catalog.route)
+                                    navController.navigate(NavigationItem.CatalogNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -87,7 +91,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable.like_3ekrj),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp). clickable(){
-                                    navController.navigate(NavigationItem.Favorite.route)
+                                    navController.navigate(NavigationItem.FavoriteNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -101,7 +105,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable.dscds),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).clickable(){
-                                    navController.navigate(NavigationItem.Prefarence.route)
+                                    navController.navigate(NavigationItem.PrefarenceNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -115,7 +119,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable.free_icon_shopping_cart_481384_bhbaq__1__0phyx),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).clickable(){
-                                    navController.navigate(NavigationItem.Cart.route)
+                                    navController.navigate(NavigationItem.CartNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -129,7 +133,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable._dnq1pfj_transformed_oo6wt),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).clickable(){
-                                    navController.navigate(NavigationItem.Personal.route)
+                                    navController.navigate(NavigationItem.PersonalNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -138,10 +142,12 @@ fun Prefarence(navController: NavHostController) {
                     }
                 }
             }
+
         }
     }
 }
+
 @Composable
-fun PrefarenceScreenPreview(navController: NavHostController) {
-    Prefarence(navController)
+fun FavoriteNAUserScreenPreview(navController: NavHostController) {
+    FavoriteNAUser(navController)
 }

@@ -63,7 +63,7 @@ fun HelloPage1(navController: NavHostController) {
             Box(contentAlignment = Alignment.Center) {
 
                 Button(
-                    onClick = { navController.navigate(NavigationItem.InterfaceScreens.route)},
+                    onClick = { navController.navigate(NavigationItem.HelloPage2.route)},
                     modifier = Modifier
                         .padding(top = 100.dp)
                         .height(50.dp)

@@ -62,7 +62,7 @@ fun AvtorizeOrg(navController: NavHostController) {
                     }
                 }
                 Button(
-                    onClick = {  navController.navigate(NavigationItem.InterfaceScreens.route)},
+                    onClick = {  navController.navigate(NavigationItem.Catalog.route)},
                     modifier = Modifier
                         .padding(top = 300.dp)
                         .height(50.dp)

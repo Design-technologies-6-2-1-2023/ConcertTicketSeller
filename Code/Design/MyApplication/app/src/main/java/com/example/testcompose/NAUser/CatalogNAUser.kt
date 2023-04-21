@@ -1,7 +1,7 @@
 package com.example.testcompose
-
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,18 +18,68 @@ import com.example.testcompose.SomeItems.Item
 import com.example.testcompose.SomeItems.NavigationItem
 
 @Composable
-fun Prefarence(navController: NavHostController) {
+fun CatalogNAUser(navController: NavHostController) {
     Column() {
         Box(
 
             modifier = Modifier
                 .background(color = colorResource(R.color.backgroud))
-                .height(150.dp).fillMaxWidth(),
-            contentAlignment = Alignment.Center) {
-            Column(  modifier = Modifier.padding(50.dp)) {
-                Text("Предпочтения", fontSize = 35.sp, color = Color.White)
+                .height(150.dp)
+                .fillMaxWidth(), contentAlignment = Alignment.Center) {
+            Column() {
+                Box(
+                    modifier = Modifier
+                        .background(color = colorResource(R.color.find))
+                        .height(50.dp)
+                ) {
+                    Row() {
+                        Image(
+                            painterResource(id = R.drawable.search_interface_symbol),
+                            contentDescription = "image",
+                            modifier = Modifier.size(50.dp, 50.dp),
+                            contentScale = ContentScale.Crop
+                        )
+                        TextField(value = "Поиск событий", onValueChange = {}, Modifier.padding(10.dp))
+                    }
 
+                }
+                Box(modifier = Modifier.height(30.dp)){
+
+                }
+                Row() {
+                    Image(
+                        painterResource(id = R.drawable.filter_v7wlx),
+                        contentDescription = "image",
+                        modifier = Modifier
+                            .size(20.dp, 20.dp)
+                            .clickable() {},
+                        contentScale = ContentScale.Crop
+                    )
+                    Text(text = "Уточнение и сортировка", fontSize = 15.sp)
+                    Box(modifier = Modifier.width(30.dp)){
+
+                    }
+                    Button(
+                        onClick = { },
+                        modifier = Modifier
+                            .height(40.dp)
+                            .width(100.dp),
+                        border = BorderStroke(3.dp, Color.White),
+                        shape = RoundedCornerShape(50),
+                        colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(R.color.backgroud)),
+
+                        )
+                    {
+
+                        Column {
+                            Text("Войти", fontSize = 15.sp, color = Color.White)
+
+                        }
+                    }
+                }
             }
+
+
         }
         Column() {
 
@@ -61,6 +111,8 @@ fun Prefarence(navController: NavHostController) {
 
                 }
 
+
+
                 Box(
                     modifier = Modifier
                         .background(color = colorResource(R.color.white))
@@ -73,7 +125,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable.xkqmspc),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).clickable(){
-                                    navController.navigate(NavigationItem.Catalog.route)
+                                    navController.navigate(NavigationItem.CatalogNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -87,7 +139,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable.like_3ekrj),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp). clickable(){
-                                    navController.navigate(NavigationItem.Favorite.route)
+                                    navController.navigate(NavigationItem.FavoriteNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -101,7 +153,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable.dscds),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).clickable(){
-                                    navController.navigate(NavigationItem.Prefarence.route)
+                                    navController.navigate(NavigationItem.PrefarenceNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -115,7 +167,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable.free_icon_shopping_cart_481384_bhbaq__1__0phyx),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).clickable(){
-                                    navController.navigate(NavigationItem.Cart.route)
+                                    navController.navigate(NavigationItem.CartNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -129,7 +181,7 @@ fun Prefarence(navController: NavHostController) {
                                 painterResource(id = R.drawable._dnq1pfj_transformed_oo6wt),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).clickable(){
-                                    navController.navigate(NavigationItem.Personal.route)
+                                    navController.navigate(NavigationItem.PersonalNAUser.route)
                                 },
                                 contentScale = ContentScale.Crop
                             )
@@ -139,9 +191,10 @@ fun Prefarence(navController: NavHostController) {
                 }
             }
         }
+
     }
 }
 @Composable
-fun PrefarenceScreenPreview(navController: NavHostController) {
-    Prefarence(navController)
+fun CatalogNAUserScreenPreview(navController: NavHostController) {
+    CatalogNAUser(navController)
 }

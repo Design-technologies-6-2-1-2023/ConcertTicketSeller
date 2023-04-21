@@ -17,72 +17,170 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.testcompose.SomeItems.Item
 import com.example.testcompose.SomeItems.NavigationItem
 import com.example.testcompose.SomeItems.TicketItem
 
 @Composable
-fun Cart() {
+fun Cart(navController: NavHostController) {
     Column() {
 
         Box(
 
             modifier = Modifier
                 .background(color = colorResource(R.color.backgroud))
-                .height(150.dp),
+                .height(150.dp).fillMaxWidth(),
             contentAlignment = Alignment.Center) {
             Column(  modifier = Modifier.padding(50.dp)) {
-                Text("Избранное", fontSize = 35.sp, color = Color.White)
+                Text("Корзина", fontSize = 35.sp, color = Color.White)
 
             }
         }
-        Box(
-            modifier = Modifier
-                .background(color = colorResource(R.color.white))
-            ,
-            contentAlignment = Alignment.Center
-        ) {
-            Column(
+        Column() {
+
+            Box(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .background(colorResource(id = R.color.white))
-                    .wrapContentSize(Alignment.Center)
-                    .verticalScroll(rememberScrollState())
+                    .background(color = colorResource(R.color.white))
+                ,
+                contentAlignment = Alignment.BottomCenter
             ) {
 
-                val i= Item("cdc", "dcdcdsc", 5, "dcdc", R.drawable.vkz, StatusEvent.Planned)
-                val j= TicketItem(i.EventDate, i.EventLocation, i.cost, i.EventTitle,i.image, 5, 8, i.status)
-                val list= listOf<Item>(i, i, i)
-                var TicketList= listOf<TicketItem>(j,j,j,j)
-                for(l in list)
-                    ListItemCart( l.image )
-                for(l in TicketList)
-                    ListItem2Cart( l.image, l.Row.toString(), l.Place.toString())
-                Box(contentAlignment = Alignment.Center) {
-                    Button(
-                        onClick = {},
-                        modifier = Modifier.padding(top = 10.dp).height(50.dp).width(200.dp),
-                        border = BorderStroke(3.dp, colorResource(R.color.backgroud)),
-                        shape = RoundedCornerShape(50),
-                        colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(R.color.backgroud)),
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(colorResource(id = R.color.white))
+                        .wrapContentSize(Alignment.Center)
+                        .verticalScroll(rememberScrollState())
+                ) {
 
-                        )
-                    {
+                    val i =
+                        Item("cdc", "dcdcdsc", 5, "dcdc", R.drawable.vkz, StatusEvent.Planned)
+                    val j = TicketItem(
+                        i.EventDate,
+                        i.EventLocation,
+                        i.cost,
+                        i.EventTitle,
+                        i.image,
+                        5,
+                        8,
+                        i.status
+                    )
+                    val list = listOf<Item>(i, i, i)
+                    var TicketList = listOf<TicketItem>(j, j, j, j)
+                    for (l in list)
+                        ListItemCart(l.image)
+                    for (l in TicketList)
+                        ListItem2Cart(l.image, l.Row.toString(), l.Place.toString())
 
-                        Column {
-                            Text("Продолжить", fontSize = 25.sp, color = Color.White)
+                    Box(contentAlignment = Alignment.Center) {
+                        Button(
+                            onClick = {},
+                            modifier = Modifier.padding(top = 10.dp).height(50.dp)
+                                .width(200.dp),
+                            border = BorderStroke(3.dp, colorResource(R.color.backgroud)),
+                            shape = RoundedCornerShape(50),
+                            colors = ButtonDefaults.buttonColors(
+                                backgroundColor = colorResource(
+                                    R.color.backgroud
+                                )
+                            ),
 
+                            )
+                        {
+
+                            Column {
+                                Text("Продолжить", fontSize = 25.sp, color = Color.White)
+
+                            }
+                        }
+                    }
+                }
+
+                        Box(
+                            modifier = Modifier
+                                .background(color = colorResource(R.color.white))
+                                .fillMaxWidth()
+                                .height(60.dp), contentAlignment = Alignment.BottomCenter
+                        ) {
+                            Row() {
+                                Column() {
+                                    Image(
+                                        painterResource(id = R.drawable.xkqmspc),
+                                        contentDescription = "image",
+                                        modifier = Modifier.size(30.dp, 30.dp).clickable() {
+                                            navController.navigate(NavigationItem.Catalog.route)
+                                        },
+                                        contentScale = ContentScale.Crop
+                                    )
+                                    Text(text = "Каталог ", fontSize = 10.sp)
+                                }
+                                Box(modifier = Modifier.size(30.dp, 30.dp)) {
+
+                                }
+                                Column() {
+                                    Image(
+                                        painterResource(id = R.drawable.like_3ekrj),
+                                        contentDescription = "image",
+                                        modifier = Modifier.size(30.dp, 30.dp).clickable() {
+                                            navController.navigate(NavigationItem.Favorite.route)
+                                        },
+                                        contentScale = ContentScale.Crop
+                                    )
+                                    Text(text = "Избранное ", fontSize = 10.sp)
+                                }
+                                Box(modifier = Modifier.size(30.dp, 30.dp)) {
+
+                                }
+                                Column() {
+                                    Image(
+                                        painterResource(id = R.drawable.dscds),
+                                        contentDescription = "image",
+                                        modifier = Modifier.size(30.dp, 30.dp).clickable() {
+                                            navController.navigate(NavigationItem.Prefarence.route)
+                                        },
+                                        contentScale = ContentScale.Crop
+                                    )
+                                    Text(text = "Предпочтения ", fontSize = 10.sp)
+                                }
+                                Box(modifier = Modifier.size(30.dp, 30.dp)) {
+
+                                }
+                                Column() {
+                                    Image(
+                                        painterResource(id = R.drawable.free_icon_shopping_cart_481384_bhbaq__1__0phyx),
+                                        contentDescription = "image",
+                                        modifier = Modifier.size(30.dp, 30.dp).clickable() {
+                                            navController.navigate(NavigationItem.Cart.route)
+                                        },
+                                        contentScale = ContentScale.Crop
+                                    )
+                                    Text(text = "Корзина ", fontSize = 10.sp)
+                                }
+                                Box(modifier = Modifier.size(30.dp, 30.dp)) {
+
+                                }
+                                Column() {
+                                    Image(
+                                        painterResource(id = R.drawable._dnq1pfj_transformed_oo6wt),
+                                        contentDescription = "image",
+                                        modifier = Modifier.size(30.dp, 30.dp).clickable() {
+                                            navController.navigate(NavigationItem.Personal.route)
+                                        },
+                                        contentScale = ContentScale.Crop
+                                    )
+                                    Text(text = "Личный кабинет ", fontSize = 10.sp)
+                                }
+                            }
                         }
                     }
                 }
             }
-
-        }
     }
-}
+
 @Composable
-fun CartScreenPreview() {
-    Cart()
+fun CartScreenPreview(navController: NavHostController) {
+    Cart(navController)
 }
 
 @Composable

@@ -77,7 +77,7 @@ fun PersonalCorrectInformation(navController: NavHostController) {
                     TextField(value = "Номер телефона", onValueChange = {}, Modifier.padding(10.dp))
                     TextField(value = "email", onValueChange = {}, Modifier.padding(10.dp))
                     Button(
-                        onClick = { navController.navigate(NavigationItem.InterfaceScreens.route)},
+                        onClick = { },
                         modifier = Modifier
                             .padding(top = 50.dp)
                             .height(50.dp)

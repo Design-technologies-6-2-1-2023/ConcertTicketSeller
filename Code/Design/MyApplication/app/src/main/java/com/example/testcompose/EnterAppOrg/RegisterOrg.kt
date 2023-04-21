@@ -51,7 +51,7 @@ fun RegisterOrg(navController: NavHostController) {
                 TextField(value = "Пароль", onValueChange = {}, Modifier.padding(10.dp) )
                 TextField(value = "Подтверждение пароля", onValueChange = {} , Modifier.padding(10.dp))
                 Button(
-                    onClick = {navController.navigate(NavigationItem.InterfaceScreens.route)},
+                    onClick = {navController.navigate(NavigationItem.Catalog.route)},
                     modifier = Modifier
                         .padding(top = 20.dp)
                         .height(50.dp)

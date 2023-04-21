@@ -103,10 +103,7 @@ class MainActivity : ComponentActivity() {
 
                 TryAgain(navController = navController)
             }
-            composable(NavigationItem.InterfaceScreens.route) {
 
-                InterfaceScreens(navController = navController)
-            }
 
             composable(NavigationItem.PersonalCorrectInformation.route) {
 
@@ -116,6 +113,49 @@ class MainActivity : ComponentActivity() {
             composable(NavigationItem.EnterPageOrg.route) {
 
                 EnterPageOrg( navController)
+            }
+            composable(NavigationItem.Catalog.route) {
+                CatalogScreenPreview(navController)
+            }
+            composable(NavigationItem.Favorite.route) {
+                FavoriteScreenPreview(navController)
+            }
+            composable(NavigationItem.Prefarence.route) {
+                PrefarenceScreenPreview(navController)
+            }
+            composable(NavigationItem.Cart.route) {
+                CartScreenPreview(navController)
+            }
+            composable(NavigationItem.Personal.route) {
+                PersonalScreenPreview(navController)
+            }
+            composable(NavigationItem.EnterPageByer.route) {
+
+                EnterPageByer( navController)
+            }
+            composable(NavigationItem.PersonalTickets.route) {
+
+                PersonalTickets( navController)
+            }
+            composable(NavigationItem.PersonalCorrectInformation.route) {
+
+                PersonalCorrectInformation(navController)
+            }
+
+            composable(NavigationItem.CatalogNAUser.route) {
+                CatalogNAUserScreenPreview(navController =navController )
+            }
+            composable(NavigationItem.FavoriteNAUser.route) {
+                FavoriteNAUserScreenPreview(navController)
+            }
+            composable(NavigationItem.PrefarenceNAUser.route) {
+                PrefarenceNAUserScreenPreview(navController)
+            }
+            composable(NavigationItem.CartNAUser.route) {
+                CartNAUSerScreenPreview(navController)
+            }
+            composable(NavigationItem.PersonalNAUser.route) {
+                PersonalNAUSerScreenPreview(navController)
             }
 
 

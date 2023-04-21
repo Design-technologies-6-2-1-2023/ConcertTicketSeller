@@ -76,7 +76,7 @@ fun AvtorizeByer(navController: NavHostController) {
                             contentScale = ContentScale.Crop
                         )
                         Button(
-                            onClick = { navController.navigate(NavigationItem.InterfaceScreens.route) },
+                            onClick = { navController.navigate(NavigationItem.Catalog.route) },
                             modifier = Modifier
                                 .padding(top = 10.dp)
                                 .height(50.dp)
