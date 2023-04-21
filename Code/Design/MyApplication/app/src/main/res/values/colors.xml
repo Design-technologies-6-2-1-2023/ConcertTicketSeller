@@ -12,4 +12,7 @@
     <color name="darkgrey">#807E7E</color>
 
     <color name="find">#E4CCFF</color>
+    <color name="greenMy">#14AE5C</color>
+    <color name="redMy">#FF0000</color>
+
 </resources>

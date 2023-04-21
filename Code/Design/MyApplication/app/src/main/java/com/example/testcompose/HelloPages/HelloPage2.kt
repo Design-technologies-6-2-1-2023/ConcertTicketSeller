@@ -18,6 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.testcompose.SomeItems.NavigationItem
 
 @Composable
 fun HelloPage2(navController: NavHostController) {
@@ -59,7 +60,7 @@ fun HelloPage2(navController: NavHostController) {
             Box(contentAlignment = Alignment.Center) {
 
                 Button(
-                    onClick = {navController.navigate(Routes.HelloPage3.route)},
+                    onClick = {navController.navigate(NavigationItem.HelloPage3.route)},
                     modifier = Modifier.padding(top = 100.dp).height(50.dp).width(200.dp),
                     border = BorderStroke(3.dp, Color.White),
                     shape = RoundedCornerShape(50),

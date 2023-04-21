@@ -15,7 +15,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.testcompose.Routes
+import com.example.testcompose.SomeItems.NavigationItem
 
 
 @Composable
@@ -45,7 +45,7 @@ fun TryAgain(navController: NavHostController) {
             Box(contentAlignment = Alignment.Center) {
 
                 Button(
-                    onClick = { navController.navigate(Routes.Avtorize.route)},
+                    onClick = { navController.navigate(NavigationItem.AvtorizeOrg.route)},
                     modifier = Modifier
                         .padding(top = 200.dp)
                         .height(50.dp)
@@ -63,7 +63,7 @@ fun TryAgain(navController: NavHostController) {
                     }
                 }
                 Button(
-                    onClick = { navController.navigate(Routes.RecoveryPassword.route)},
+                    onClick = { navController.navigate(NavigationItem.RecoveryPasswordOrg.route)},
                     modifier = Modifier
                         .padding(top = 10.dp)
                         .height(50.dp)

@@ -15,7 +15,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.testcompose.Routes
+import com.example.testcompose.SomeItems.NavigationItem
 
 @Composable
 fun CannotFindUser(navController: NavHostController) {
@@ -42,7 +42,7 @@ fun CannotFindUser(navController: NavHostController) {
             Box(contentAlignment = Alignment.Center) {
 
                 Button(
-                    onClick = { navController.navigate(Routes.Register.route)},
+                    onClick = { navController.navigate(NavigationItem.RegisterOrg.route)},
                     modifier = Modifier
                         .padding(top = 200.dp)
                         .height(50.dp)

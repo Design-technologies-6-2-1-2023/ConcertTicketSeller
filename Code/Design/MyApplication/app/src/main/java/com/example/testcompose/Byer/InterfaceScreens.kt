@@ -19,7 +19,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.testcompose.Byer.*
+import com.example.testcompose.SomeItems.NavigationItem
 
 @Composable
 fun InterfaceScreens(navController: NavHostController) {
@@ -80,6 +80,7 @@ fun BottomNavigationBar(navController: NavController) {
             BottomNavigationItem(
                 icon = { Icon(painterResource(id = item.icon), contentDescription = item.title) },
                 label = { Text(text = item.title) },
+
                 selectedContentColor = Color.Black,
                 alwaysShowLabel = true,
                 selected = currentRoute == item.route,
@@ -116,8 +117,23 @@ fun Navigation(navController: NavHostController) {
             CartScreenPreview()
         }
         composable(NavigationItem.Personal.route) {
-            PersonalScreenPreview()
+            PersonalScreenPreview(navController)
         }
+        composable(NavigationItem.EnterPageByer.route) {
+
+            EnterPageByer( navController)
+        }
+        composable(NavigationItem.PersonalTickets.route) {
+
+            PersonalTickets( navController)
+        }
+        composable(NavigationItem.PersonalCorrectInformation.route) {
+
+            PersonalCorrectInformation(navController)
+        }
+
+
+
     }
 }
 @Preview(showBackground = true)

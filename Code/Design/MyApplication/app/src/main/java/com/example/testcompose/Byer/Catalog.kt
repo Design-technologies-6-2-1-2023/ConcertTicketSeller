@@ -1,4 +1,4 @@
-package com.example.testcompose.Byer
+package com.example.testcompose
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -9,17 +9,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.testcompose.Item
-import com.example.testcompose.R
-import com.example.testcompose.Routes
+import com.example.testcompose.SomeItems.Item
 
 @Composable
 fun Catalog() {
@@ -82,7 +77,7 @@ fun Catalog() {
                     .verticalScroll(rememberScrollState())
             ) {
 
-                val i= Item("cdc", "dcdcdsc", 5, "dcdc", R.drawable.vkz)
+                val i= Item("cdc", "dcdcdsc", 5, "dcdc", R.drawable.vkz, StatusEvent.Planned)
                 val list= listOf<Item>(i, i, i)
                 for(l in list)
                     ListItem(cost = l.cost.toString(), location = l.EventLocation, date = l.EventDate, name =l.EventTitle,l.image )

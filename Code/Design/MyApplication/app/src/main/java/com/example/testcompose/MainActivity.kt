@@ -1,39 +1,17 @@
 package com.example.testcompose
 
 import android.os.Bundle
-import android.text.style.LineHeightSpan
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.Image
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.Role.Companion.Image
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.*
-import androidx.compose.ui.input.key.Key.Companion.Home
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.semantics.Role.Companion.Button
-import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHost
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.testcompose.ui.theme.TestComposeTheme
-
+import com.example.testcompose.SomeItems.NavigationItem
 
 
 class MainActivity : ComponentActivity() {
@@ -51,75 +29,96 @@ class MainActivity : ComponentActivity() {
 
         val navController = rememberNavController()
 
-        NavHost(navController = navController, startDestination = Routes.HelloPage1.route) {
+        NavHost(navController = navController, startDestination = NavigationItem.HelloPage1.route) {
 
-            composable(Routes.HelloPage2.route) {
+            composable(NavigationItem.HelloPage2.route) {
 
                 HelloPage2(navController = navController)
             }
 
-            composable(Routes.HelloPage1.route) {
+            composable(NavigationItem.HelloPage1.route) {
 
                 HelloPage1(navController = navController)
             }
 
-            composable(Routes.HelloPage3.route) {
+            composable(NavigationItem.HelloPage3.route) {
 
                 HelloPage3(navController = navController)
             }
-            composable(Routes.HelloPage4.route) {
+            composable(NavigationItem.HelloPage4.route) {
 
                 HelloPage4(navController = navController)
             }
 
-            composable(Routes.HelloPage5.route) {
+            composable(NavigationItem.HelloPage5.route) {
 
                 HelloPage5(navController = navController)
             }
-            composable(Routes.HelloPage6.route) {
+            composable(NavigationItem.HelloPage6.route) {
 
                 HelloPage6(navController = navController)
             }
-            composable(Routes.HelloPage7.route) {
+            composable(NavigationItem.HelloPage7.route) {
 
                 HelloPage7(navController = navController)
             }
-            composable(Routes.EnterPage.route) {
 
-                EnterPage(navController = navController)
-            }
-            composable(Routes.Register.route) {
+            composable(NavigationItem.RegisterOrg.route) {
 
-                Register(navController = navController)
+                RegisterOrg(navController = navController)
             }
-            composable(Routes.Avtorize.route) {
+            composable(NavigationItem.RegisterByer.route) {
 
-                Avtorize(navController = navController)
+                RegisterByer(navController = navController)
             }
-            composable(Routes.RecoveryPassword.route) {
+            composable(NavigationItem.AvtorizeOrg.route) {
 
-                RecoveryPassword(navController = navController)
+                AvtorizeOrg(navController = navController)
             }
-            composable(Routes.ConnectToManager.route) {
+            composable(NavigationItem.RecoveryPasswordOrg.route) {
+
+                RecoveryPasswordOrg(navController = navController)
+            }
+            composable(NavigationItem.AvtorizeByer.route) {
+
+                AvtorizeByer(navController = navController)
+            }
+            composable(NavigationItem.RecoveryPasswordByer.route) {
+
+                RecoveryPasswordByer(navController = navController)
+            }
+            composable(NavigationItem.ConnectToManager.route) {
 
                 ConnectToManager(navController = navController)
             }
-            composable(Routes.UncorrectText.route) {
+            composable(NavigationItem.UncorrectText.route) {
 
                 UncorrectText(navController = navController)
             }
-            composable(Routes.CannotFindUser.route) {
+            composable(NavigationItem.CannotFindUser.route) {
 
                 CannotFindUser(navController = navController)
             }
-            composable(Routes.TryAgain.route) {
+            composable(NavigationItem.TryAgain.route) {
 
                 TryAgain(navController = navController)
             }
-            composable(Routes.InterfaceScreens.route) {
+            composable(NavigationItem.InterfaceScreens.route) {
 
                 InterfaceScreens(navController = navController)
             }
+
+            composable(NavigationItem.PersonalCorrectInformation.route) {
+
+                PersonalCorrectInformation(navController = navController)
+            }
+
+            composable(NavigationItem.EnterPageOrg.route) {
+
+                EnterPageOrg( navController)
+            }
+
+
         }
     }
 

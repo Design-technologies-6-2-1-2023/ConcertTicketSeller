@@ -15,6 +15,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.testcompose.SomeItems.NavigationItem
 
 @Composable
 fun HelloPage7(navController: NavHostController) {
@@ -30,7 +31,7 @@ fun HelloPage7(navController: NavHostController) {
             Box(contentAlignment = Alignment.Center) {
 
                 Button(
-                    onClick = {navController.navigate(Routes.HelloPage6.route)},
+                    onClick = {navController.navigate(NavigationItem.HelloPage6.route)},
                     modifier = Modifier.padding(top = 100.dp).height(50.dp).width(300.dp),
                     border = BorderStroke(3.dp, colorResource(R.color.darkgrey)),
                     shape = RoundedCornerShape(50),
@@ -47,7 +48,7 @@ fun HelloPage7(navController: NavHostController) {
             }
             Box(contentAlignment = Alignment.Center) {
                 Button(
-                    onClick = {navController.navigate(Routes.HelloPage6.route)},
+                    onClick = {navController.navigate(NavigationItem.HelloPage6.route)},
                     modifier = Modifier.padding(top = 10.dp).height(50.dp).width(300.dp),
                     border = BorderStroke(3.dp, colorResource(R.color.darkgrey)),
                     shape = RoundedCornerShape(50),
@@ -64,7 +65,7 @@ fun HelloPage7(navController: NavHostController) {
             }
             Box(contentAlignment = Alignment.Center) {
                 Button(
-                    onClick = {navController.navigate(Routes.HelloPage6.route)},
+                    onClick = {navController.navigate(NavigationItem.HelloPage6.route)},
                     modifier = Modifier.padding(top = 10.dp).height(50.dp).width(300.dp),
                     border = BorderStroke(3.dp, colorResource(R.color.darkgrey)),
                     shape = RoundedCornerShape(50),
@@ -82,7 +83,7 @@ fun HelloPage7(navController: NavHostController) {
             Box(contentAlignment = Alignment.Center ) {
 
                 Button(
-                    onClick = {navController.navigate(Routes.EnterPage.route)},
+                    onClick = {navController.navigate(NavigationItem.EnterPageByer.route)},
                     modifier = Modifier
                         .padding(top = 230.dp)
                         .height(50.dp)
