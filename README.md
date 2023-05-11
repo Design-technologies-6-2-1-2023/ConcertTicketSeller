@@ -1,9 +1,11 @@
-## ConcertTicketSeller
+# ConcertTicketSeller
 Мобильное приложение по организации мероприятий и реализации билетов.
 
+# Layers:  
+[Серверная часть](https://github.com/Alex07062002/ticketEase/tree/master)  
+
 # Участники проекта:
-[Алина Бредихина](https://github.com/briilliin)  
-[Хадим Диоп](https://github.com/mamekhaaa)  
+[Алина Бредихина](https://github.com/briilliin)    
 [Алексей Положенцев](https://github.com/Alex07062002)  
 [Алина Щербинина](https://github.com/alinashch)  
 
