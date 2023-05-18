@@ -66,9 +66,8 @@ fun Cart(navController: NavHostController) {
                         8,
                         i.status
                     )
-                    val list = listOf<Item>(i, i, i)
                     var TicketList = listOf<TicketItem>(j, j, j, j)
-                    for (l in list)
+                    for (l in TicketList)
                         ListItemCart(l.image)
                     for (l in TicketList)
                         ListItem2Cart(l.image, l.Row.toString(), l.Place.toString())
