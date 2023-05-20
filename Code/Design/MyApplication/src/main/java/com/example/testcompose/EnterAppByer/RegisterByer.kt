@@ -16,7 +16,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -88,6 +90,9 @@ private fun EnterRegisterFun(){
     var repeadPassword= remember {
         mutableStateOf(TextFieldValue())
     }
+    val response = remember {
+        mutableStateOf("")
+    }
     TextField(
         value = name.value,
         onValueChange = { name.value = it },
@@ -158,7 +163,7 @@ private fun EnterRegisterFun(){
             login,
             email,
             phone,
-            password,
+            password
             )
         },
         modifier = Modifier
@@ -172,6 +177,7 @@ private fun EnterRegisterFun(){
         ) {
         Text(text = "Регистрация", modifier = Modifier.padding(8.dp))
     }
+
 
 }
 
