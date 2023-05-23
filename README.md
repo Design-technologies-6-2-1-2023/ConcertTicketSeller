@@ -3,6 +3,7 @@
 
 # Layers:  
 [Серверная часть](https://github.com/Alex07062002/ticketEase/tree/master)  
+[Пользовательские экраны (Compose UI)](https://github.com/alinashch/TicketEase_frontend.git)  
 
 # Участники проекта:
 [Алина Бредихина](https://github.com/briilliin)    
