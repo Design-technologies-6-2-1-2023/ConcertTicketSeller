@@ -12,6 +12,7 @@
 
 # Визуализация проекта
 [Figma](https://www.figma.com/file/tdOG9JBKYX5Lrs92TDlV6F/Untitled?node-id=0%3A1&t=eE5Y2vTapVNAN9RP-1)  
+[FigmaUpgrade](https://www.figma.com/file/PaynYsGdjVVYR96SojTCNb/TicketEase?type=design&node-id=0%3A1&t=RSIPUWICo8xNGhhj-1)
 [Miro (App architecture)](https://miro.com/app/board/uXjVMbiC6pc=/?share_link_id=458892867192)  
 
 # Документация: 
