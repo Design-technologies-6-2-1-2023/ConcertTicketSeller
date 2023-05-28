@@ -3,7 +3,6 @@
 
 # Участники проекта:
 [Алина Бредихина](https://github.com/briilliin)  
-[Хадим Диоп](https://github.com/mamekhaaa)  
 [Алексей Положенцев](https://github.com/Alex07062002)  
 [Алина Щербинина](https://github.com/alinashch)  
 
