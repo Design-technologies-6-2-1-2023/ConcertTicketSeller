@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ScreenView(){
    val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "HelloPage1"){
+    NavHost(navController = navController, startDestination = "AvtorizeByer"){
         composable("RegisterBuyer"){ RegisterBuyer(navController) }
         composable("Catalog"){ Catalog(navController) }
         composable("AvtorizeByer"){

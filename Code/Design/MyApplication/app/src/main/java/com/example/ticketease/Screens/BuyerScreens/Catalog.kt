@@ -14,12 +14,17 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.ticketease.DataClasses.Person.Buyer
+import com.example.ticketease.MVVM.Event.Catalog.CatalogRepositoryImpl
+import com.example.ticketease.MVVM.Event.Catalog.ViewModelCatalog
+import com.example.ticketease.MVVM.Person.Buyer.BuyerRetrofitAPI
+import com.example.ticketease.MVVM.Person.Buyer.Personal.ViewModelPersonal
 import com.example.ticketease.R
 
 @Composable
-fun Catalog(navController: NavHostController) {
+ fun Catalog(navController: NavHostController, viewModel: ViewModelCatalog = hiltViewModel()) {
     var searchQuery by remember { mutableStateOf("") }
     Column() {
         Box(
@@ -85,7 +90,17 @@ fun Catalog(navController: NavHostController) {
                         .wrapContentSize(Alignment.Center)
                         .verticalScroll(rememberScrollState())
                 ) {
+                    val list = viewModel.catalog
+                    for (l in list){
 
+                            ListItem(
+                                cost = l.name,
+                                location = l.nameGroup.toString(),
+                                date = l.genre.toString(),
+                                name = l.organizerId.toString(),
+                                R.drawable.vkz
+                            )
+                        }
 
 
                 }

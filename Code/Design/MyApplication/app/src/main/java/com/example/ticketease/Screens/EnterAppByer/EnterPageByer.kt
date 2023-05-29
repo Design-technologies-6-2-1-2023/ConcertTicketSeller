@@ -80,6 +80,7 @@ fun EnterPageByer(navController: NavHostController) {
                         }
                     }
                 }
+
             }
 
         }

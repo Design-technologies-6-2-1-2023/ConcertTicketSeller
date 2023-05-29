@@ -5,19 +5,12 @@ import com.example.ticketease.DataClasses.Event.EventDTO
 import com.example.ticketease.MVVM.Person.Buyer.BuyerRetrofitAPI
 import com.example.ticketease.MVVM.Person.Buyer.Register.RegistResult
 import retrofit2.HttpException
-//var listCatalog: List<EventDTO> = listOf()
 
-class CatalogRepositoryImpl(private val api : BuyerRetrofitAPI,
-                            private val prefs : SharedPreferences
+class CatalogRepositoryImpl(private val api : BuyerRetrofitAPI
 ):CatalogRepository {
-    override suspend fun getAllEvents(): CatalogResult<Unit> {
-        return try {
+    override suspend fun getAllEvents():List<EventDTO> {
             val response = api.selectAllEvents()
-           // prefs.getString()
+        return  response
 
-            CatalogResult.Correct()
-        }catch  (e: HttpException){
-            CatalogResult.UnknownError()
-        }
     }
 }

@@ -16,7 +16,7 @@ class PersonalRepositoryImpl (
             override suspend fun getByToken(buyer: BuyerResponse): BuyerWithoutPswd {
                 val response = api.buyerByToken(buyer)
                 val b =BuyerWithoutPswd(response.name, response.surname, response.email, response.mobile, response.token)
-               prefs.edit().putString("name", response.name).apply()
+                prefs.edit().putString("name", response.name).apply()
                 prefs.edit().putString("surname", response.surname).apply()
                 prefs.edit().putString("email", response.email).apply()
                 prefs.edit().putString("mobile", response.mobile).apply()

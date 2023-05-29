@@ -1,5 +1,6 @@
 package com.example.ticketease.Screens.HelloPages
 
+import android.content.SharedPreferences
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -23,7 +24,6 @@ import com.example.ticketease.R
 var city = Cities.Moscow
 @Composable
 fun HelloPage7(navController: NavHostController) {
-
     val selectedCity = rememberSaveable { mutableStateOf(Cities.Voronezh) }
     val isButtonPressedVrn = remember { mutableStateOf(false) }
     val isButtonPressedSpb = remember { mutableStateOf(false) }

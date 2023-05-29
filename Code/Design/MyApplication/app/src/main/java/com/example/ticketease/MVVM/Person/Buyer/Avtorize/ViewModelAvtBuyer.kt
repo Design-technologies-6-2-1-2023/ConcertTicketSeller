@@ -19,7 +19,6 @@ class ViewModelAvtBuyer @Inject constructor(
     private val repository : AvtRepository,
     private val prefs : SharedPreferences
 ) : ViewModel() {
-    val city: SharedPreferences.Editor = prefs.edit().putString("city","Voronezh") // TODO delete this
     var flag : Boolean = false
     var state by mutableStateOf(BuyerRequest())
     private val resultChannel = Channel<AvtResult<Unit>>()

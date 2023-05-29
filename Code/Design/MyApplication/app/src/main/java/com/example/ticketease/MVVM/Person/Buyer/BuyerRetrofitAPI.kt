@@ -17,6 +17,8 @@ interface BuyerRetrofitAPI {
 
     @POST("/buyers/token")
    suspend  fun buyerByToken(@Body dataModel: BuyerResponse?):  BuyerWithoutPswd
+
+
     @POST("/events")
     suspend  fun selectAllEvents():  List<EventDTO>
 }

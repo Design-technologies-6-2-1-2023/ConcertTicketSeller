@@ -25,7 +25,6 @@ import com.example.ticketease.R
 @SuppressLint("SuspiciousIndentation")
 @Composable
 fun CatalogNAUser(navController: NavHostController, viewModel: ViewModelCatalog = hiltViewModel()) {
-viewModel.catalog()
     Column() {
         Box(
 

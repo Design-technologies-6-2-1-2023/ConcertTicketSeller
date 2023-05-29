@@ -21,8 +21,9 @@ import javax.inject.Inject
 class ViewModelPersonal @Inject constructor(
     private val prefs : SharedPreferences
 ) : ViewModel() {
-    var city  = prefs.getString("city","Voronezh")
+    var city  = prefs.getString("city","Moscow")
     var state by mutableStateOf(Gson().fromJson(prefs.getString("buyer",null)!!,BuyerWithoutPswd::class.java))
-    }
+
+}
 
 

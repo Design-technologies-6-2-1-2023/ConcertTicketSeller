@@ -63,8 +63,8 @@ fun provideSharedPref(app : Application) : SharedPreferences{
 
     @Provides
     @Singleton
-    fun provideCatalogRepository(api : BuyerRetrofitAPI,prefs : SharedPreferences) : CatalogRepository {
-        return CatalogRepositoryImpl(api, prefs)
+    fun provideCatalogRepository(api : BuyerRetrofitAPI) : CatalogRepository {
+        return CatalogRepositoryImpl(api)
     }
 }
 

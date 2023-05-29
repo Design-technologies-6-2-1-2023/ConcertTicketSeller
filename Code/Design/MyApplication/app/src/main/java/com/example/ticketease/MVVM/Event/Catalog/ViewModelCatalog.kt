@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.ticketease.DataClasses.Event.EventDTO
 import com.example.ticketease.DataClasses.Person.Buyer
 import com.example.ticketease.DataClasses.Person.Cities
+import com.example.ticketease.MVVM.Person.Buyer.Avtorize.AvtRepository
 import com.example.ticketease.MVVM.Person.Buyer.Register.RegistResult
 import com.example.ticketease.MVVM.Person.Buyer.Register.RegisterRepository
 import com.example.ticketease.MVVM.Person.Buyer.Register.RegisterStateTextFields
@@ -19,29 +20,16 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ViewModelCatalog @Inject constructor(
-    private val repository : CatalogRepository,
-    private val prefs : SharedPreferences
-) : ViewModel() {
-    var flag : Boolean = false
+class ViewModelCatalog @Inject constructor(private val repository : CatalogRepository,
+                                           ) : ViewModel() {
 
-
-    private val catalogChannel = Channel<CatalogResult<Unit>>()
-    val catalogResults = catalogChannel.receiveAsFlow()
-
-
-    fun catalog() {
-           get()
-        }
-
-
-    private fun get() {
+                                                var catalog =get()
+    private fun get(): List<EventDTO> {
+        var result: List<EventDTO> = listOf()
         viewModelScope.launch {
-            flag = true
-            val result = repository.getAllEvents()
-            catalogChannel.send(result)
+            result =repository.getAllEvents()
 
         }
+        return result
     }
-
 }
