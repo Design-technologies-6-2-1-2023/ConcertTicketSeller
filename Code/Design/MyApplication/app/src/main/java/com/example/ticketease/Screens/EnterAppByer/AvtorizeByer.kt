@@ -1,6 +1,5 @@
 package com.example.ticketease.Screens.EnterAppByer
 
-import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -14,27 +13,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
-import androidx.compose.foundation.Image
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.example.ticketease.DataClasses.Person.BuyerWithoutPswd
 import com.example.ticketease.MVVM.Person.Buyer.Avtorize.AvtResult
 import com.example.ticketease.MVVM.Person.Buyer.Avtorize.AvtStateTextFields
 import com.example.ticketease.MVVM.Person.Buyer.Avtorize.ViewModelAvtBuyer
-import com.example.ticketease.MVVM.Person.Buyer.Avtorize.token
-import com.example.ticketease.MVVM.Person.Buyer.Personal.PersonalStateTextFields
-import com.example.ticketease.MVVM.Person.Buyer.Personal.ViewModelPersonal
-import com.example.ticketease.MVVM.Person.Buyer.Register.RegistResult
-import com.example.ticketease.MVVM.Person.Buyer.Register.RegisterStateTextFields
 import com.example.ticketease.R
 
 
@@ -155,14 +142,12 @@ fun AvtorizeByer(navController: NavHostController, viewModel: ViewModelAvtBuyer 
 
                                 Column {
                                     Text("Войти", fontSize = 15.sp, color = Color.White)
-
                                 }
                             }
                         }
                     }
                 }
             }
-
         }
     }
 }

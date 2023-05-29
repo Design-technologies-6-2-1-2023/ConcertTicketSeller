@@ -109,7 +109,7 @@ fun Catalog(navController: NavHostController) {
                                 ,
                                 contentScale = ContentScale.Crop
                             )
-                            Text(text = "Каталог ", fontSize = 10.sp, modifier = Modifier.padding(23.dp, 5.dp))
+                            Text(text = "Каталог", fontSize = 10.sp, modifier = Modifier.padding(23.dp, 5.dp))
                         }
                         Box(modifier = Modifier.size(30.dp, 30.dp)){
 
@@ -122,12 +122,12 @@ fun Catalog(navController: NavHostController) {
                                 painterResource(id = R.drawable.dscds),
                                 contentDescription = "image",
                                 modifier = Modifier.size(35.dp, 35.dp).offset(-7.dp, -7.dp).clickable(){
-                                    //navController.navigate(NavigationItem.Prefarence.route)
+                                    //navController.navigate(NavigationItem.Prefarence.route) // TODO change this
                                 }
                                 ,
                                 contentScale = ContentScale.Crop
                             )
-                            Text(text = "Предпочтения ", fontSize = 10.sp, modifier = Modifier.offset(-25.dp, 0.dp))
+                            Text(text = "Предпочтения", fontSize = 10.sp, modifier = Modifier.offset(-25.dp, 0.dp))
                         }
                         Box(modifier = Modifier.size(30.dp, 30.dp)){
 
@@ -137,12 +137,12 @@ fun Catalog(navController: NavHostController) {
                                 painterResource(id = R.drawable.shopcart),
                                 contentDescription = "image",
                                 modifier = Modifier.size(30.dp, 30.dp).offset(-25.dp, -5.dp).clickable(){
-                                   // navController.navigate(NavigationItem.Cart.route)
+                                   // navController.navigate(NavigationItem.Cart.route) // TODO change this
                                 }
                                 ,
                                 contentScale = ContentScale.Crop
                             )
-                            Text(text = "Корзина ", fontSize = 10.sp, modifier = Modifier.offset(-28.dp, 5.dp))
+                            Text(text = "Корзина", fontSize = 10.sp, modifier = Modifier.offset(-28.dp, 5.dp))
                         }
                         Box(modifier = Modifier.size(30.dp, 30.dp)){
 
@@ -151,19 +151,18 @@ fun Catalog(navController: NavHostController) {
                             Image(
                                 painterResource(id = R.drawable.avatar),
                                 contentDescription = "image",
-                                modifier = Modifier.size(31.dp, 31.dp).offset(-15.dp, -5.dp).clickable(){
+                                modifier = Modifier.size(31.dp, 31.dp).offset(-15.dp, -5.dp).clickable{
                                     navController.navigate("Personal")
                                 }
                                 ,
                                 contentScale = ContentScale.Crop
                             )
-                            Text(text = "Личный кабинет ", fontSize = 10.sp, modifier = Modifier.offset(-20.dp, -3.dp))
+                            Text(text = "Личный кабинет", fontSize = 10.sp, modifier = Modifier.offset(-20.dp, -3.dp))
                         }
                     }
                 }
             }
         }
-
     }
 }
 @Composable

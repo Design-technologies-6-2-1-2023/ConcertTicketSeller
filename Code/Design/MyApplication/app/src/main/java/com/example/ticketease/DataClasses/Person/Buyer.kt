@@ -57,5 +57,3 @@ data class BuyerUpdateCity(
     @JsonProperty("city")
     val city: Cities? =null
     )
-//добавить еще сущностей для личного кабинета и тд. Для остальных можно не следить. Пароль 1 раз!!!!!!!!!!!!!!!!
-//

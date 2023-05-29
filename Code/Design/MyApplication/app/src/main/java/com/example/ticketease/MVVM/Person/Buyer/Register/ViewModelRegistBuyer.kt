@@ -21,7 +21,6 @@ class ViewModelRegistBuyer @Inject constructor(
 ) : ViewModel() {
     val city: SharedPreferences.Editor = prefs.edit().putString("city","Voronezh") // TODO change this
     var flag : Boolean = false
-    //var repeatPassword : String = ""
     var state by mutableStateOf(Buyer())
     var repeatPassword = mutableStateOf("")
 
@@ -52,5 +51,4 @@ class ViewModelRegistBuyer @Inject constructor(
             resultChannel.send(result)
         }
     }
-
 }

@@ -6,5 +6,5 @@ import com.example.ticketease.DataClasses.Person.BuyerResponse
 import com.example.ticketease.DataClasses.Person.BuyerWithoutPswd
 
 interface AvtRepository {
-    suspend fun Avtorize(buyer: BuyerRequest) : AvtResult<Unit>
+    suspend fun avtorize(buyer: BuyerRequest) : AvtResult<Unit>
 }

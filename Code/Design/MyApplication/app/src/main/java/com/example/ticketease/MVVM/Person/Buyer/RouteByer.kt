@@ -3,6 +3,8 @@ package com.example.ticketease.MVVM.Person.Buyer
 import android.app.Application
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
+import com.example.ticketease.MVVM.Event.Catalog.CatalogRepository
+import com.example.ticketease.MVVM.Event.Catalog.CatalogRepositoryImpl
 import com.example.ticketease.MVVM.Person.Buyer.Avtorize.AvtRepository
 import com.example.ticketease.MVVM.Person.Buyer.Avtorize.AvtRepositoryImpl
 import com.example.ticketease.MVVM.Person.Buyer.Personal.PersonalRepository
@@ -56,6 +58,13 @@ fun provideSharedPref(app : Application) : SharedPreferences{
     @Singleton
     fun providePersonalRepository(api : BuyerRetrofitAPI,prefs : SharedPreferences) : PersonalRepository {
         return PersonalRepositoryImpl(api, prefs)
+    }
+
+
+    @Provides
+    @Singleton
+    fun provideCatalogRepository(api : BuyerRetrofitAPI,prefs : SharedPreferences) : CatalogRepository {
+        return CatalogRepositoryImpl(api, prefs)
     }
 }
 

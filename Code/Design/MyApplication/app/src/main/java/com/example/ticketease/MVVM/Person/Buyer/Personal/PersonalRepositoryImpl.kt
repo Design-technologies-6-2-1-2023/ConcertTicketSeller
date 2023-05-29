@@ -9,23 +9,20 @@ import com.example.ticketease.MVVM.Person.Buyer.BuyerRetrofitAPI
 import com.example.ticketease.MVVM.Person.Buyer.Register.RegistResult
 import com.example.ticketease.MVVM.Person.Buyer.Register.RegisterRepository
 import retrofit2.HttpException
-//val b : BuyerWithoutPswd = BuyerWithoutPswd("всвы", "высвы", "высвы", "", "")
 class PersonalRepositoryImpl (
-    private val api : BuyerRetrofitAPI,
-    private val prefs : SharedPreferences
-) : PersonalRepository {
-    @SuppressLint("CommitPrefEdits")
-    override suspend fun getByToken(buyer: BuyerResponse): BuyerWithoutPswd {
-        val response = api.buyerByToken(buyer)
-        val b =BuyerWithoutPswd(response.name, response.surname, response.email, response.mobile, response.token)
-        prefs.edit().putString("name", response.name).apply()
-        prefs.edit().putString("surname", response.surname).apply()
-        prefs.edit().putString("email", response.email).apply()
-        prefs.edit().putString("mobile", response.mobile).apply()
-
-        //PersonalResult.Correct()
+            private val api : BuyerRetrofitAPI,
+            private val prefs : SharedPreferences
+        ) : PersonalRepository {
+            override suspend fun getByToken(buyer: BuyerResponse): BuyerWithoutPswd {
+                val response = api.buyerByToken(buyer)
+                val b =BuyerWithoutPswd(response.name, response.surname, response.email, response.mobile, response.token)
+               prefs.edit().putString("name", response.name).apply()
+                prefs.edit().putString("surname", response.surname).apply()
+                prefs.edit().putString("email", response.email).apply()
+                prefs.edit().putString("mobile", response.mobile).apply()
 
 
-        return b
+
+                return b
     }
 }

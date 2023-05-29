@@ -1,6 +1,5 @@
 package com.example.ticketease.Screens.EnterAppByer
 
-import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -10,12 +9,10 @@ import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -23,24 +20,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.example.ticketease.DataClasses.Person.Buyer
-import com.example.ticketease.MVVM.Person.Buyer.Avtorize.token
-import com.example.ticketease.MVVM.Person.Buyer.Personal.PersonalResult
-import com.example.ticketease.MVVM.Person.Buyer.Personal.PersonalStateTextFields
 import com.example.ticketease.MVVM.Person.Buyer.Personal.ViewModelPersonal
-import com.example.ticketease.MVVM.Person.Buyer.Register.RegistResult
 import com.example.ticketease.R
 @Composable
 fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hiltViewModel()) {
-
- var b= viewModel.personal(PersonalStateTextFields.PersonalBuyer)
+    val city = viewModel.city!!
+    val state = viewModel.state
 
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.White)
     ) {
-        Column() {
+        Column {
             Box(
 
                 modifier = Modifier
@@ -54,14 +46,14 @@ fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hi
 
                 }
             }
-            Column() {
+            Column {
                 Box(
                     modifier = Modifier
                         .background(color = colorResource(R.color.white)),
                     contentAlignment = Alignment.BottomCenter
                 ) {
 
-                    Column() {
+                    Column{
 
 
                         Button(
@@ -75,7 +67,7 @@ fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hi
 
                             )
                         {
-                            Row() {
+                            Row{
 
                                 Column {
                                     Image(
@@ -88,15 +80,15 @@ fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hi
                                     )
                                     Row(
                                         modifier = Modifier
-                                            .offset(-80.dp, -20.dp)
+                                            .offset((-80).dp, (-20).dp)
                                     ) {
-                                        Text(b.name + " ", fontSize = 20.sp, color = Color.Black)
-                                        Text(b.surname, fontSize = 20.sp, color = Color.Black)
+                                        Text(state.name + " ", fontSize = 20.sp, color = Color.Black)
+                                        Text(state.surname, fontSize = 20.sp, color = Color.Black)
 
                                     }
                                     Text(
-                                        b.mobile.toString(), fontSize = 20.sp, modifier = Modifier
-                                            .offset(-80.dp, -20.dp), color = Color.Black
+                                        state.mobile.toString(), fontSize = 20.sp, modifier = Modifier
+                                            .offset((-80).dp, (-20).dp), color = Color.Black
                                     )
 
 
@@ -106,16 +98,16 @@ fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hi
 
                         Box(modifier = Modifier.padding(20.dp)) {
                             Spacer(modifier = Modifier.height(60.dp))
-                            Column() {
+                            Column{
                                 Text(
                                     "Ваш город",
                                     fontSize = 25.sp,
                                     color = Color.Black,
                                     fontWeight = FontWeight.Bold
                                 )
-                                Row() {
+                                Row{
                                     Text(
-                                       " p.city",
+                                        city,
                                         fontSize = 25.sp,
                                         color = Color.Black
                                     )
@@ -127,7 +119,7 @@ fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hi
                                         contentDescription = "image",
                                         modifier = Modifier
                                             .size(25.dp, 25.dp)
-                                            .clickable() {
+                                            .clickable{
 
                                             },
                                         contentScale = ContentScale.Crop,
@@ -177,16 +169,16 @@ fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hi
                                 .offset(0.dp, 113.dp)
                                 .height(70.dp), contentAlignment = Alignment.BottomCenter
                         ) {
-                            Row() {
-                                Column() {
+                            Row{
+                                Column{
                                     Image(
                                         painterResource(id = R.drawable.barbl),
                                         contentDescription = "image",
                                         modifier = Modifier
                                             .size(29.dp, 29.dp)
-                                            .offset(25.dp, -5.dp)
-                                            .clickable() {
-                                                //navController.navigate(NavigationItem.Catalog.route)
+                                            .offset(25.dp, (-5).dp)
+                                            .clickable{
+                                                navController.navigate("Catalog")
                                             },
                                         contentScale = ContentScale.Crop
                                     )
@@ -203,20 +195,20 @@ fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hi
                                 Box(modifier = Modifier.size(30.dp, 30.dp)) {
 
                                 }
-                                Column() {
+                                Column{
                                     Image(
                                         painterResource(id = R.drawable.dscds),
                                         contentDescription = "image",
                                         modifier = Modifier
                                             .size(35.dp, 35.dp)
-                                            .offset(-7.dp, -7.dp)
-                                            .clickable() {
+                                            .offset((-7).dp, (-7).dp)
+                                            .clickable{
                                                 //navController.navigate(NavigationItem.Prefarence.route)
                                             },
                                         contentScale = ContentScale.Crop
                                     )
                                     Text(
-                                        text = "Предпочтения ",
+                                        text = "Предпочтения",
                                         fontSize = 10.sp,
                                         modifier = Modifier.offset(-25.dp, 0.dp)
                                     )
@@ -224,7 +216,7 @@ fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hi
                                 Box(modifier = Modifier.size(30.dp, 30.dp)) {
 
                                 }
-                                Column() {
+                                Column{
                                     Image(
                                         painterResource(id = R.drawable.shopcart),
                                         contentDescription = "image",
@@ -245,7 +237,7 @@ fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hi
                                 Box(modifier = Modifier.size(30.dp, 30.dp)) {
 
                                 }
-                                Column() {
+                                Column{
                                     Image(
                                         painterResource(id = R.drawable.avatarbl),
                                         contentDescription = "image",
@@ -271,9 +263,4 @@ fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hi
 
         }
     }
-}
-
-@Composable
-fun PersonalScreenPreview(navController: NavHostController) {
-    Personal(navController)
 }

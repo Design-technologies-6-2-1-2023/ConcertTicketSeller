@@ -11,11 +11,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.testcompose.ui.theme.TestComposeTheme
-import com.example.ticketease.Screens.EnterAppByer.AvtorizeByer
-import com.example.ticketease.Screens.EnterAppByer.Catalog
-import com.example.ticketease.Screens.EnterAppByer.Personal
-import com.example.ticketease.Screens.EnterAppByer.RegisterBuyer
+import com.example.ticketease.Screens.EnterAppByer.*
 import com.example.ticketease.Screens.Errors.ErrorNoLogin
+import com.example.ticketease.Screens.HelloPages.*
+import com.example.ticketease.Screens.NAUser.CartNAUser
+import com.example.ticketease.Screens.NAUser.CatalogNAUser
+import com.example.ticketease.Screens.NAUser.PersonalNAUSer
+import com.example.ticketease.Screens.NAUser.PrefarenceNAUSer
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,7 +37,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ScreenView(){
    val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "AvtorizeByer"){
+    NavHost(navController = navController, startDestination = "HelloPage1"){
         composable("RegisterBuyer"){ RegisterBuyer(navController) }
         composable("Catalog"){ Catalog(navController) }
         composable("AvtorizeByer"){
@@ -43,7 +45,19 @@ fun ScreenView(){
         }
         composable("Personal"){ Personal(navController) }
         composable("ErrorNoLogin"){ ErrorNoLogin(navController) }
-
+        composable("HelloPage1"){ HelloPage1(navController) }
+        composable("HelloPage3"){ HelloPage3(navController) }
+        composable("HelloPage2"){ HelloPage2(navController) }
+        composable("HelloPage4"){ HelloPage4(navController) }
+        composable("HelloPage5"){ HelloPage5(navController) }
+        composable("HelloPage6"){ HelloPage6(navController) }
+        composable("HelloPage7"){ HelloPage7(navController) }
+        composable("LogoPage"){ LogoPage(navController) }
+        composable("EnterPageByer"){ EnterPageByer(navController) }
+        composable("CartNAUser"){ CartNAUser(navController) }
+        composable("CatalogNAUser"){ CatalogNAUser(navController) }
+        composable("PersonalNAUSer"){ PersonalNAUSer(navController) }
+        composable("PrefarenceNAUSer"){ PrefarenceNAUSer(navController) }
     }
 }
 

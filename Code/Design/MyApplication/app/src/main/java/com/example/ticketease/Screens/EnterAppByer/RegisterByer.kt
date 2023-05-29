@@ -12,11 +12,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -36,7 +33,6 @@ fun RegisterBuyer(navController: NavHostController, viewModel: ViewModelRegistBu
             res ->
             when (res){
                 is RegistResult.Registered -> {
-
                     navController.navigate("Catalog")
                 }
                 is RegistResult.Unregistered -> {
@@ -57,7 +53,6 @@ fun RegisterBuyer(navController: NavHostController, viewModel: ViewModelRegistBu
         }
     }
 
-   // val repeatPassword = remember { mutableStateOf(TextFieldValue()) }
 
     Box(modifier = Modifier
         .background(color = colorResource(R.color.white))
@@ -121,7 +116,6 @@ fun RegisterBuyer(navController: NavHostController, viewModel: ViewModelRegistBu
                         placeholder = { Text(text = "Номер телефона") },
                         modifier = Modifier
                             .padding(5.dp),
-
                         )
 
                 TextField(
