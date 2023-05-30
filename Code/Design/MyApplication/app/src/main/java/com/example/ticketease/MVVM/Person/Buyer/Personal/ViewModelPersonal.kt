@@ -23,7 +23,6 @@ class ViewModelPersonal @Inject constructor(
 ) : ViewModel() {
     var city  = prefs.getString("city","Moscow")
     var state by mutableStateOf(Gson().fromJson(prefs.getString("buyer",null)!!,BuyerWithoutPswd::class.java))
-
 }
 
 

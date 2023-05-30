@@ -22,9 +22,8 @@ import com.example.ticketease.MVVM.Person.Buyer.Avtorize.AvtResult
 import com.example.ticketease.MVVM.Person.Buyer.Personal.ViewModelPersonal
 import com.example.ticketease.R
 
-@SuppressLint("SuspiciousIndentation")
 @Composable
-fun CatalogNAUser(navController: NavHostController, viewModel: ViewModelCatalog = hiltViewModel()) {
+fun CatalogNAUser(navController: NavHostController) {
     Column() {
         Box(
 

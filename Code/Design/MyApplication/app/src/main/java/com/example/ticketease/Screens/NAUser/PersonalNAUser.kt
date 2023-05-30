@@ -19,13 +19,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.example.ticketease.MVVM.NAUser.ViewModelNAUserPersonal
 import com.example.ticketease.R
-import com.example.ticketease.Screens.HelloPages.city
 
 
 @Composable
-fun PersonalNAUSer(navController: NavHostController) {
+fun PersonalNAUSer(navController: NavHostController, viewModel: ViewModelNAUserPersonal = hiltViewModel()) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -62,7 +63,7 @@ fun PersonalNAUSer(navController: NavHostController) {
                             )
                             Row() {
                                 Text(
-                                    city.toString(),
+                                    viewModel.city.toString(),
                                     fontSize = 25.sp,
                                     color = Color.Black
                                 )

@@ -1,7 +1,5 @@
 package com.example.ticketease.Screens.HelloPages
 
-import android.content.SharedPreferences
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -18,12 +16,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.ticketease.DataClasses.Person.Cities
+import com.example.ticketease.MVVM.HelloPagesPut.putCity
 import com.example.ticketease.R
-var city = Cities.Moscow
+//var city = Cities.Moscow
 @Composable
-fun HelloPage7(navController: NavHostController) {
+fun HelloPage7(navController: NavHostController, c: putCity = hiltViewModel()) {
     val selectedCity = rememberSaveable { mutableStateOf(Cities.Voronezh) }
     val isButtonPressedVrn = remember { mutableStateOf(false) }
     val isButtonPressedSpb = remember { mutableStateOf(false) }
@@ -43,7 +43,7 @@ fun HelloPage7(navController: NavHostController) {
                     onClick = {
                         selectedCity.value = Cities.Voronezh
                         isButtonPressedVrn.value = !isButtonPressedVrn.value
-                        city=Cities.Voronezh
+                        c.put(Cities.Voronezh)
                         toNextPage(navController)
 
                     },
@@ -67,7 +67,7 @@ fun HelloPage7(navController: NavHostController) {
                     onClick = {
                         selectedCity.value = Cities.Moscow
                         isButtonPressedMsc.value = !isButtonPressedMsc.value
-                        city=Cities.Moscow
+                        c.put(Cities.Moscow)
                         toNextPage(navController)
                     },
                     modifier = Modifier.padding(top = 10.dp).height(50.dp).width(300.dp).offset(y = 270.dp, x = 0.dp),
@@ -90,8 +90,8 @@ fun HelloPage7(navController: NavHostController) {
                     onClick = {
                         selectedCity.value = Cities.SaintPetersburg
                         isButtonPressedSpb.value = !isButtonPressedSpb.value
-                        city=Cities.SaintPetersburg
-                       toNextPage(navController)
+                        c.put(Cities.SaintPetersburg)
+                        toNextPage(navController)
                               },
                     modifier = Modifier.padding(top = 10.dp).height(50.dp).width(300.dp).offset(y = 270.dp, x = 0.dp),
                     shape = RoundedCornerShape(50),
