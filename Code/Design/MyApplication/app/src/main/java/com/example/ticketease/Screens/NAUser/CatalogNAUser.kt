@@ -23,7 +23,8 @@ import com.example.ticketease.MVVM.Person.Buyer.Personal.ViewModelPersonal
 import com.example.ticketease.R
 
 @Composable
-fun CatalogNAUser(navController: NavHostController) {
+ fun CatalogNAUser(navController: NavHostController ) {
+    val viewModel: ViewModelCatalog = hiltViewModel()
     Column() {
         Box(
 
@@ -83,9 +84,11 @@ fun CatalogNAUser(navController: NavHostController) {
         Column() {
 
 
+
             Box(
                 modifier = Modifier
-                    .background(color = colorResource(R.color.white)),
+                    .background(color = colorResource(R.color.white))
+                ,
                 contentAlignment = Alignment.BottomCenter
             ) {
                 Column(
@@ -95,7 +98,20 @@ fun CatalogNAUser(navController: NavHostController) {
                         .wrapContentSize(Alignment.Center)
                         .verticalScroll(rememberScrollState())
                 ) {
+                    val list = viewModel.catalog
+                    for (l in list){
 
+                        com.example.ticketease.Screens.EnterAppByer.ListItem(
+                            cost = l.name,
+                            location = l.nameGroup.toString(),
+                            date = l.genre.toString(),
+                            name = l.organizerId.toString(),
+                            R.drawable.vkz
+                        )
+                    }
+
+
+                }
 
                     Box(
                         modifier = Modifier
@@ -274,6 +290,6 @@ fun CatalogNAUser(navController: NavHostController) {
                     }
                 }
             }
-        }
+
     }
 }

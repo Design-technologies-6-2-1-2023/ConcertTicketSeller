@@ -1,14 +1,28 @@
 package com.example.ticketease.DataClasses.Ticket
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class TicketDTO(val id : Long?,
-                     val eventId : Long,
-                     val buyerId : Long? = null,
-                     val row : Int? = null,
-                     val column : Int? = null,
-                     val status : StatusTicket = StatusTicket.SALE,
-                     val price : Double)
+data class TicketDTO(
+    @JsonProperty("id")
+    val id : Long?,
+    @JsonProperty("eventId")
+    val eventId : Long,
+    @JsonProperty("buyerId")
+
+    val buyerId : Long? = null,
+    @JsonProperty("row")
+
+    val row : Int? = null,
+    @JsonProperty("column")
+
+    val column : Int? = null,
+    @JsonProperty("status")
+
+    val status : StatusTicket = StatusTicket.SALE,
+    @JsonProperty("price")
+
+    val price : Double)
 
 

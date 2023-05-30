@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.example.ticketease.MVVM.NAUser.ViewModelNAUserPersonal
+import com.example.ticketease.MVVM.Person.NAUser.ViewModelNAUserPersonal
 import com.example.ticketease.R
 
 

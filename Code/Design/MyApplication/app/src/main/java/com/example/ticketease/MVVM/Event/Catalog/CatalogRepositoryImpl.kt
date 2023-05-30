@@ -9,7 +9,8 @@ import retrofit2.HttpException
 class CatalogRepositoryImpl(private val api : BuyerRetrofitAPI
 ):CatalogRepository {
     override suspend fun getAllEvents():List<EventDTO> {
-            val response = api.selectAllEvents()
+        val response = api.selectAllEvents()
+        response.size
         return  response
 
     }
