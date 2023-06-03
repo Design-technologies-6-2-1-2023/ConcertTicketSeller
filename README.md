@@ -6,11 +6,7 @@
 [Пользовательские экраны (Compose UI)](https://github.com/alinashch/TicketEase_frontend.git)  
 
 # Участники проекта:
-<<<<<<< HEAD
-[Алина Бредихина](https://github.com/briilliin)  
-=======
 [Алина Бредихина](https://github.com/briilliin)    
->>>>>>> Realise
 [Алексей Положенцев](https://github.com/Alex07062002)  
 [Алина Щербинина](https://github.com/alinashch)  
 [Павел Мишакин](https://github.com/mishakinGIT)  
@@ -30,7 +26,7 @@
 
 # Реализация: 
 [Front-End](https://github.com/Design-technologies-6-2-1-2023/ConcertTicketSeller/tree/main/Code/Design/MyApplication)  
-[Back-End]()  
+[Back-End](https://github.com/Design-technologies-6-2-1-2023/ConcertTicketSeller/tree/main/Code/BackEnd)  
 
 # Реализация на личных github: 
 [Front-End](https://github.com/alinashch/TicketEase_frontend)  
