@@ -11,8 +11,11 @@
     <color name="grey">#E6E6E6</color>
     <color name="darkgrey">#807E7E</color>
 
-    <color name="find">#E4CCFF</color>
+    <color name="find">#9C61DF</color>
     <color name="greenMy">#14AE5C</color>
     <color name="redMy">#FF0000</color>
+
+
+    <color name="vgrey">#F6F6F6</color>
 
 </resources>
