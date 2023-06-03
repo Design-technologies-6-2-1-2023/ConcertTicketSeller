@@ -2,8 +2,8 @@
 Мобильное приложение по организации мероприятий и реализации билетов.
 
 # Layers:  
-[Серверная часть](https://github.com/Alex07062002/ticketEase/tree/master)  
-[Пользовательские экраны (Compose UI)](https://github.com/alinashch/TicketEase_frontend.git)  
+[Серверная часть](https://github.com/Alex07062002/ticketEase)  
+[Пользовательские экраны (Compose UI)](https://github.com/alinashch/TicketEase_frontend)  
 
 # Участники проекта:
 [Алина Бредихина](https://github.com/briilliin)    
@@ -28,6 +28,4 @@
 [Front-End](https://github.com/Design-technologies-6-2-1-2023/ConcertTicketSeller/tree/main/Code/Design/MyApplication)  
 [Back-End](https://github.com/Design-technologies-6-2-1-2023/ConcertTicketSeller/tree/main/Code/BackEnd)  
 
-# Реализация на личных github: 
-[Front-End](https://github.com/alinashch/TicketEase_frontend)  
-[Back-End](https://github.com/Alex07062002/ticketEase)
+
