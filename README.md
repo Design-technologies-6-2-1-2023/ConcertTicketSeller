@@ -22,7 +22,7 @@
 
 # Документация: 
 [Техническое задание с диаграммами](https://docs.google.com/document/d/1wh3F7_nDOtC5FdGBcnFpBjiT3ZxzKr7L/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
-[Курсовой проект](https://docs.google.com/document/d/10GIMbLe80t7FaCyTkuB5xv2UHwG05ziDaAONeIeKZ4s/edit?usp=sharing)  
+[Курсовой проект](https://docs.google.com/document/d/1Uo8tgTgOyocwsXXVlaVt8MUODYDpi2_BZWvIzO_0R9U/edit#heading=h.gjdgxs)  
 
 # Реализация: 
 [Front-End](https://github.com/Design-technologies-6-2-1-2023/ConcertTicketSeller/tree/main/Code/Design/MyApplication)  
