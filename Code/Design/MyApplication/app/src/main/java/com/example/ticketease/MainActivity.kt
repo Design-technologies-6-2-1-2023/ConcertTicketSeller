@@ -1,8 +1,10 @@
 package com.example.ticketease
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -10,6 +12,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.testcompose.CartPersonal
+import com.example.testcompose.Prefarence
+import com.example.testcompose.SuccessfulOrder
 import com.example.testcompose.ui.theme.TestComposeTheme
 import com.example.ticketease.Screens.EnterAppByer.*
 import com.example.ticketease.Screens.EnterOrg.AvtorizeOrg
@@ -26,6 +31,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity()  {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -38,6 +44,7 @@ class MainActivity : ComponentActivity()  {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun ScreenView(){
    val navController = rememberNavController()
@@ -82,8 +89,12 @@ fun ScreenView(){
         composable("PlaceSelector"){ PlaceSelector (navController) }
         composable("TimeSelector"){ TimeSelector (navController) }
         composable("CreateEvent"){ CreateEvent (navController) }
+        composable("SuccessfulEvent"){ SuccessfulEvent (navController) }
 
+        composable("Prefarance"){ Prefarence(navController)}
+        composable("SuccessfulOrder"){ SuccessfulOrder(navController)}
 
+        composable("CartPersonal"){ CartPersonal(navController)}
     }
 }
 

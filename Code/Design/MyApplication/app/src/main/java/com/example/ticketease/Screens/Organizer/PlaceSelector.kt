@@ -2,14 +2,12 @@ package com.example.ticketease.Screens.Organizer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -17,18 +15,17 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.example.ticketease.MVVM.Event.SelectPlace.SelectPlace
 import com.example.ticketease.MVVM.Event.SelectPlace.SelectPlaceViewModel
+import com.example.ticketease.MVVM.Event.create.ViewModelCreateRepository
 import com.example.ticketease.MVVM.Event.getEvents.ViewModelRepositoryGetEvents
-import com.example.ticketease.MVVM.HelloPages.HelloPage5ViewModel
 import com.example.ticketease.R
+import com.example.ticketease.getPlace
 
 @Composable
 fun PlaceSelector(navController: NavHostController, viewModel: ViewModelRepositoryGetEvents = hiltViewModel()) {
-
-    val list = viewModel.get
+    val list = getPlace(viewModel.city)
     Box(
         modifier = Modifier
             .background(color = colorResource(R.color.white))
@@ -49,8 +46,11 @@ fun PlaceSelector(navController: NavHostController, viewModel: ViewModelReposito
             for (l in list) {
                 ListItemPlace(
                     name = l.name,
+                    id= l.id!!,
                     nCapacity = l.capacity.toString(),
-                    navController
+                    navController,
+                    row= l.numRow!!,
+                    column = l.numColumn!!
                 )
             }
         }
@@ -59,14 +59,25 @@ fun PlaceSelector(navController: NavHostController, viewModel: ViewModelReposito
 
 
 @Composable
-fun ListItemPlace(name: String, nCapacity: String, navController: NavHostController, viewModel: SelectPlaceViewModel = hiltViewModel()) {
+fun ListItemPlace(name: String, id:Long,  nCapacity: String, navController: NavHostController, viewModel: SelectPlaceViewModel = hiltViewModel(), row:Int, column:Int, viewModel2: ViewModelCreateRepository = hiltViewModel()) {
 
     val isButtonPressed = remember { mutableStateOf(false) }
     Box(contentAlignment = Alignment.Center) {
         Button(
             onClick = {
                 isButtonPressed.value = !isButtonPressed.value
+                /*
                 viewModel.place(SelectPlace.Place(name))
+                viewModel.place(SelectPlace.Id(id))
+                viewModel.place(SelectPlace.selectPlace)
+                viewModel.getTime()
+
+                 */
+                viewModel2.putColumn(column)
+                viewModel2.putRow(row)
+                viewModel2.putCapacity(nCapacity)
+                viewModel2.putID(id)
+                viewModel2.craete()
                 navController.navigate("TimeSelector")
             },
             modifier = Modifier
@@ -85,7 +96,7 @@ fun ListItemPlace(name: String, nCapacity: String, navController: NavHostControl
             Column {
                 Text(name, fontSize = 18.sp, color = Color.White)
 
-                Text("Количество" + nCapacity, fontSize = 18.sp, color = Color.White)
+                Text("Количество  " + nCapacity, fontSize = 18.sp, color = Color.White)
 
             }
         }

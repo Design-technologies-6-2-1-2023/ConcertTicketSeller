@@ -3,12 +3,20 @@ package com.example.ticketease.MVVM.Person.Buyer
 import android.app.Application
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
+import com.example.ticketease.MVVM.Event.Preferences.PreferencesRepository
+import com.example.ticketease.MVVM.Event.Preferences.PreferencesRepositoryImpl
+import com.example.ticketease.MVVM.Event.create.CreateRepository
+import com.example.ticketease.MVVM.Event.create.CreateRepositoryImpl
 import com.example.ticketease.MVVM.Event.getEvents.getEventsRepository
 import com.example.ticketease.MVVM.Event.getEvents.getEventsRepositoryImpl
+import com.example.ticketease.MVVM.Event.getTime.getTimeRepository
+import com.example.ticketease.MVVM.Event.getTime.getTimeRepositoryImpl
 
 
 import com.example.ticketease.MVVM.Person.Buyer.Avtorize.AvtRepository
 import com.example.ticketease.MVVM.Person.Buyer.Avtorize.AvtRepositoryImpl
+import com.example.ticketease.MVVM.Person.Buyer.CartPersonal.CartPersonalRepository
+import com.example.ticketease.MVVM.Person.Buyer.CartPersonal.CartPersonalRepositoryImpl
 import com.example.ticketease.MVVM.Person.Buyer.Catalog.CatalogRepository
 import com.example.ticketease.MVVM.Person.Buyer.Catalog.CatalogRepositoryImpl
 import com.example.ticketease.MVVM.Person.Buyer.CitySelector.CitySelector
@@ -137,6 +145,30 @@ fun provideSharedPref(app : Application) : SharedPreferences{
     fun provideGetPlace(api : BuyerRetrofitAPI,prefs : SharedPreferences) : getEventsRepository {
         return getEventsRepositoryImpl(api, prefs)
     }
+    @Provides
+    @Singleton
+    fun provideGetTime(api : BuyerRetrofitAPI,prefs : SharedPreferences) : getTimeRepository {
+        return getTimeRepositoryImpl(api, prefs)
+    }
 
+    @Provides
+    @Singleton
+    fun providePreferencesRepository(
+        api: BuyerRetrofitAPI,
+        prefs: SharedPreferences
+    ): PreferencesRepository {
+        return PreferencesRepositoryImpl(api, prefs)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCartPersonalRepository(api : BuyerRetrofitAPI,prefs : SharedPreferences) : CartPersonalRepository {
+        return CartPersonalRepositoryImpl(api, prefs)
+    }
+    @Provides
+    @Singleton
+    fun provideCreate(api : BuyerRetrofitAPI,prefs : SharedPreferences) : CreateRepository {
+        return CreateRepositoryImpl(api, prefs)
+    }
 }
 

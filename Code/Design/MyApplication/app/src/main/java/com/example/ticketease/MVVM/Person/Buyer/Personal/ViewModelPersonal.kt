@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.ticketease.DataClasses.Catalog
 import com.example.ticketease.DataClasses.Person.BuyerResponse
 import com.example.ticketease.DataClasses.Person.BuyerWithoutPswd
 import com.example.ticketease.MVVM.Person.Buyer.Register.RegisterRepository
@@ -19,10 +20,35 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ViewModelPersonal @Inject constructor(
+    private val repository: PersonalRepository,
     private val prefs : SharedPreferences
 ) : ViewModel() {
     var city  = prefs.getString("city","Moscow")
-    var state by mutableStateOf(Gson().fromJson(prefs.getString("buyer",null)!!,BuyerWithoutPswd::class.java))
+    var state = mutableStateOf(Gson().fromJson(prefs.getString("buyer","")!!,BuyerWithoutPswd::class.java))
+
+    fun createCatalog() {
+        viewModelScope.launch {
+            val result = repository.getAllEvents()
+
+            prefs.edit().putString("catalog",Gson().toJson(result)).apply()
+        }
+    }
+    fun createPreference(){
+        viewModelScope.launch {
+            val listTicket = repository.selectEventByBuyer().size
+            val listPrefs = if (listTicket<5){
+                repository.getAllEvents()
+            }else {
+                repository.preferencesRoom()
+            }
+            prefs.edit().putString("preferences",Gson().toJson(listPrefs)).apply()
+        }
+    }
+
+    fun CartPerson(){
+        viewModelScope.launch {
+            // val listTickets = repository
+        }
+    }
+
 }
-
-

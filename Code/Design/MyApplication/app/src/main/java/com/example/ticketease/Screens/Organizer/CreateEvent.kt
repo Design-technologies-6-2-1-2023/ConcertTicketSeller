@@ -1,10 +1,6 @@
 package com.example.ticketease.Screens.Organizer
 
-import android.widget.Toast
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -15,23 +11,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.ticketease.MVVM.Event.EnterParam.EnterParamStateTextFields
 import com.example.ticketease.MVVM.Event.EnterParam.ViewModelEnterParam
-import com.example.ticketease.MVVM.Person.Buyer.Register.RegisterStateTextFields
-import com.example.ticketease.MVVM.Person.Buyer.Register.ViewModelRegistBuyer
+import com.example.ticketease.MVVM.Event.create.ViewModelCreateRepository
 import com.example.ticketease.R
-import com.example.ticketease.Screens.EnterAppByer.checkSymbols
 
 @Composable
-fun CreateEvent(navController: NavHostController, viewModel: ViewModelEnterParam = hiltViewModel()) {
+fun CreateEvent(navController: NavHostController, viewModel: ViewModelEnterParam = hiltViewModel(),viewModel2: ViewModelCreateRepository = hiltViewModel() ) {
     val state = viewModel.state
     val context = LocalContext.current
     val statePlace=viewModel.statePlace
@@ -111,6 +103,7 @@ fun CreateEvent(navController: NavHostController, viewModel: ViewModelEnterParam
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Button(
                             onClick = {
+                                /*
                                 if (checkSymbols(state.name) and checkSymbols(state.genre!!) and checkSymbols(
                                         state.type!!
                                     ) and checkSymbols(
@@ -124,6 +117,11 @@ fun CreateEvent(navController: NavHostController, viewModel: ViewModelEnterParam
                                     Toast.makeText(context,"Error", Toast.LENGTH_LONG).show()
 
                                 }
+
+                                 */
+                                viewModel2.putPrice(statePlace.value)
+                                viewModel.enter(EnterParamStateTextFields.Enter)
+                                navController.navigate("PlaceSelector")
                             },
                             modifier = Modifier
                                 .padding(top = 30.dp)

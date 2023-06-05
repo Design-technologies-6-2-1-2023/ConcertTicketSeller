@@ -27,3 +27,21 @@ data class TicketDTO(
 )
 
 
+@Serializable
+data class TicketCountWithPrice(
+    @JsonProperty("eventId")
+
+    val eventId: Long? =null,
+    @JsonProperty("eventId")
+
+    val capacity: Long? =null,
+    @JsonProperty("eventId")
+
+    val row: Int? = null,
+    @JsonProperty("eventId")
+
+    val column: Int? = null,
+    @JsonProperty("eventId")
+
+    val price: Double? =null
+    )

@@ -1,5 +1,7 @@
 package com.example.ticketease.Screens.EnterAppByer
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,6 +17,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.example.ticketease.DataClasses.Person.Buyer
 import com.example.ticketease.MVVM.Person.Buyer.Catalog.ViewModelCatalog
@@ -23,11 +26,12 @@ import com.example.ticketease.MVVM.Person.Buyer.CitySelector.ViewModelCitySelect
 import com.example.ticketease.MVVM.Person.Buyer.Personal.ViewModelPersonal
 import com.example.ticketease.R
 import kotlinx.coroutines.flow.onEach
+import java.time.Instant
 
-
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
- fun Catalog(navController: NavHostController, viewModel: ViewModelCatalog = hiltViewModel()) {
-    var searchQuery by remember { mutableStateOf("") }
+fun Catalog(navController: NavHostController, viewModel: ViewModelCatalog = hiltViewModel()) {
+    val state = viewModel.state.value
     Column() {
         Box(
 
@@ -56,28 +60,17 @@ import kotlinx.coroutines.flow.onEach
                         .wrapContentSize(Alignment.Center)
                         .verticalScroll(rememberScrollState())
                 ) {
-                    /*
-                    val list = viewModel.getCatalog()
-                    list.onEach {
-                        list.
+                    for (event in state){
+                        ListItem(
+                            id = event.eventId,
+                            name = event.name,
+                            location = event.location,
+                            date =  Instant.ofEpochMilli(event.date),
+                            cost = event.price,
+                            ID = R.drawable.vkz
+                        )
                     }
-                    for (l in list){
-                            ListItem(
-                                cost = l.name,
-                                location = l.nameGroup.toString(),
-                                date = l.genre.toString(),
-                                name = l.name,
-                                R.drawable.vkz
-                            )
-                        }
-
-
-                     */
-
                 }
-
-
-
                 Box(
                     modifier = Modifier
                         .background(color = colorResource(R.color.white))
@@ -89,42 +82,49 @@ import kotlinx.coroutines.flow.onEach
                             Image(
                                 painterResource(id = R.drawable.bar1),
                                 contentDescription = "image",
-                                modifier = Modifier.size(29.dp, 29.dp).offset(25.dp, -5.dp).clickable(){
-                                    //navController.navigate(NavigationItem.Catalog.route)
-                                }
+                                modifier = Modifier
+                                    .size(29.dp, 29.dp)
+                                    .offset(25.dp, -5.dp)
+                                    .clickable() {
+                                        navController.navigate("Catalog")
+                                    }
                                 ,
                                 contentScale = ContentScale.Crop
                             )
                             Text(text = "Каталог", fontSize = 10.sp, modifier = Modifier.padding(23.dp, 5.dp))
                         }
                         Box(modifier = Modifier.size(30.dp, 30.dp)){
-
                         }
                         Box(modifier = Modifier.size(30.dp, 30.dp)){
-
                         }
                         Column() {
                             Image(
                                 painterResource(id = R.drawable.dscds),
                                 contentDescription = "image",
-                                modifier = Modifier.size(35.dp, 35.dp).offset(-7.dp, -7.dp).clickable(){
-                                    //navController.navigate(NavigationItem.Prefarence.route) // TODO change this
-                                }
+                                modifier = Modifier
+                                    .size(35.dp, 35.dp)
+                                    .offset(-7.dp, -7.dp)
+                                    .clickable() {
+                                        viewModel.createPreference()
+                                        navController.navigate("Prefarence")
+                                    }
                                 ,
                                 contentScale = ContentScale.Crop
                             )
                             Text(text = "Предпочтения", fontSize = 10.sp, modifier = Modifier.offset(-25.dp, 0.dp))
                         }
                         Box(modifier = Modifier.size(30.dp, 30.dp)){
-
                         }
                         Column() {
                             Image(
                                 painterResource(id = R.drawable.shopcart),
                                 contentDescription = "image",
-                                modifier = Modifier.size(30.dp, 30.dp).offset(-25.dp, -5.dp).clickable(){
-                                   // navController.navigate(NavigationItem.Cart.route) // TODO change this
-                                }
+                                modifier = Modifier
+                                    .size(30.dp, 30.dp)
+                                    .offset(-25.dp, -5.dp)
+                                    .clickable() {
+                                        navController.navigate("CartPersonal")
+                                    }
                                 ,
                                 contentScale = ContentScale.Crop
                             )
@@ -137,9 +137,12 @@ import kotlinx.coroutines.flow.onEach
                             Image(
                                 painterResource(id = R.drawable.avatar),
                                 contentDescription = "image",
-                                modifier = Modifier.size(31.dp, 31.dp).offset(-15.dp, -5.dp).clickable{
-                                    navController.navigate("Personal")
-                                }
+                                modifier = Modifier
+                                    .size(31.dp, 31.dp)
+                                    .offset(-15.dp, -5.dp)
+                                    .clickable {
+                                        navController.navigate("Personal")
+                                    }
                                 ,
                                 contentScale = ContentScale.Crop
                             )
@@ -151,13 +154,10 @@ import kotlinx.coroutines.flow.onEach
         }
     }
 }
-@Composable
-fun CatalogScreenPreview(navController: NavHostController) {
-    Catalog(navController)
-}
+
 
 @Composable
-fun ListItem(cost:String, location:String, date:String, name:String,  ID: Int){
+fun ListItem(id : Long, cost:Double, location:String, date: Instant, name:String, ID: Int, viewModel: ViewModelCatalog = hiltViewModel()){
     var isLiked by remember { mutableStateOf(false) }
 
     Card(modifier = Modifier
@@ -175,18 +175,14 @@ fun ListItem(cost:String, location:String, date:String, name:String,  ID: Int){
                             text = name, fontSize = 25.sp
                         )
                     }
-
                 }
-
-
-
-
-
                 Row() {
                     Image(
                         painterResource(id = ID),
                         contentDescription = "image",
-                        modifier = Modifier.size(250.dp, 230.dp).offset(65.dp, 10.dp),
+                        modifier = Modifier
+                            .size(250.dp, 230.dp)
+                            .offset(65.dp, 10.dp),
                         contentScale = ContentScale.Crop,
                     )
                     Column() {
@@ -205,7 +201,10 @@ fun ListItem(cost:String, location:String, date:String, name:String,  ID: Int){
                         )
                         Box(modifier = Modifier.height(120.dp)) {}
                         Button(
-                            onClick = { },
+                            onClick = {
+                                viewModel.putTicketToCart(id)
+                                      viewModel.countTickets(id)
+                            },
                             modifier = Modifier
                                 .height(40.dp)
                                 .offset(15.dp, 140.dp)
@@ -224,11 +223,13 @@ fun ListItem(cost:String, location:String, date:String, name:String,  ID: Int){
                     Image(
                         painterResource(id = R.drawable.free_icon_ruble_1868089),
                         contentDescription = "image",
-                        modifier = Modifier.size(17.dp, 17.dp).offset(15.dp, 22.dp),
+                        modifier = Modifier
+                            .size(17.dp, 17.dp)
+                            .offset(15.dp, 22.dp),
                         contentScale = ContentScale.Crop
                     )
                     Text(
-                        text = "Стоимость",
+                        text = cost.toString(),
                         modifier = Modifier.offset(20.dp, 20.dp),
                         fontSize = 15.sp
                     )
@@ -240,11 +241,13 @@ fun ListItem(cost:String, location:String, date:String, name:String,  ID: Int){
                     Image(
                         painterResource(id = R.drawable.free_icon_place_711170),
                         contentDescription = "image",
-                        modifier = Modifier.size(17.dp, 17.dp).offset(15.dp, 22.dp),
+                        modifier = Modifier
+                            .size(17.dp, 17.dp)
+                            .offset(15.dp, 22.dp),
                         contentScale = ContentScale.Crop
                     )
                     Text(
-                        text = "Местоположение",
+                        text = location,
                         modifier = Modifier.offset(20.dp, 20.dp),
                         fontSize = 15.sp
                     )
@@ -253,11 +256,13 @@ fun ListItem(cost:String, location:String, date:String, name:String,  ID: Int){
                     Image(
                         painterResource(id = R.drawable.free_icon_dates_4253987),
                         contentDescription = "image",
-                        modifier = Modifier.size(17.dp, 17.dp).offset(15.dp, 22.dp),
+                        modifier = Modifier
+                            .size(17.dp, 17.dp)
+                            .offset(15.dp, 22.dp),
                         contentScale = ContentScale.Crop
                     )
                     Text(
-                        text = "Дата проведения",
+                        text = date.toString(),
                         modifier = Modifier.offset(20.dp, 20.dp),
                         fontSize = 15.sp
                     )

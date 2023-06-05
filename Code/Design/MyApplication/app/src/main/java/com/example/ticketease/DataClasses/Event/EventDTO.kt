@@ -32,3 +32,14 @@ data class EventDTO(
 
     val description: String? = null)
 
+@Serializable
+data class EventId(
+    @JsonProperty("id")
+    val id: Long)
+
+@Serializable
+data class EventIdCount(
+    @JsonProperty("id")
+    val id: Long,
+    @JsonProperty("count")
+    val count : Long)

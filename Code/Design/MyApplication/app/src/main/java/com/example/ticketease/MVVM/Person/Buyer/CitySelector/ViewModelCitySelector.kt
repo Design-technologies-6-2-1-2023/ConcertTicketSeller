@@ -33,7 +33,7 @@ class ViewModelCitySelector@Inject constructor(
             is CitySelector.City -> cityState.value = city.value.toString()
             is CitySelector.SaveCity -> putCity()
             is CitySelector.citySelector->{
-                state.city=cityByString(cityState.value)
+                state.city=cityState.value
                 state.token= prefs.getString("token", null).toString()
                 upd()
             }
@@ -50,7 +50,7 @@ class ViewModelCitySelector@Inject constructor(
         }
     }
 
-     fun cityByString(cityString:String): Cities {
+    fun cityByString(cityString:String): Cities {
         if( cityString=="Moscow"){
             return Cities.Moscow
         }else if(cityString=="Voronezh"){

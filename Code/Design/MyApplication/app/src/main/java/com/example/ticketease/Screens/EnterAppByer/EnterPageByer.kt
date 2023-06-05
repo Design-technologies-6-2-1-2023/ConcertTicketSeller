@@ -33,7 +33,7 @@ fun EnterPageByer(navController: NavHostController) {
                 contentAlignment = Alignment.TopCenter
             ) {
                 Column(  modifier = Modifier.padding(50.dp)) {
-                    Text("Войти ", fontSize = 35.sp, color = Color.White)
+                    Text("Войти  ", fontSize = 35.sp, color = Color.White)
 
                 }
             }

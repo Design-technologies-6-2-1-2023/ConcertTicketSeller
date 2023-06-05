@@ -18,18 +18,18 @@ class SelectTimeViewModel  @Inject constructor(
 ) : ViewModel(){
     var placeTime by  mutableStateOf(PlaceTimeDTO())
 
-    fun place(place : SelectPlace){
-        when(place){
-            is SelectPlace.Place -> placeTime.date = place.value
-            is SelectPlace.selectPlace -> putCity()
+    fun place(time : SelectTime){
+        when(time){
+            is SelectTime.Time -> placeTime = placeTime.copy(date = time.value)
+            is SelectTime.selectTime -> putCity()
         }
     }
 
     private fun putCity() {
         //var state by mutableStateOf(Gson().fromJson(prefs.getString("event",null)!!, EventDTO::class.java))
         //prefs.edit().putString("place", placeState.value)!!.apply()
-        prefs.edit().putString("placeTimeDTO", Gson().toJson(placeTime.date)).apply()
-
+        //prefs.edit().putString("placeTimeDTO", Gson().toJson(placeTime.date)).apply()
+        //prefs.edit().putString("PlaceId", placeTime.id.toString()).apply()
     }
 
 }

@@ -3,6 +3,7 @@ package com.example.ticketease.DataClasses.PlaceTime
 import com.example.ticketease.DataClasses.DateSerializer
 import com.fasterxml.jackson.annotation.JsonProperty
 import kotlinx.serialization.Serializable
+import java.time.Instant
 
 @Serializable
 data class PlaceTimeDTO(
@@ -10,13 +11,12 @@ data class PlaceTimeDTO(
     val id: Long?=null,
     @JsonProperty("placeId")
 
-    val placeId: Long? =null,
+    var placeId: Long? =null,
     @JsonProperty("date")
 
     @Serializable(with = DateSerializer::class)
-    var date: String="",
+    var date: String? =null,
     @JsonProperty("status")
-
-    val status: StatusPlaceTime? =null
+    var status: StatusPlaceTime? =null
     )
 

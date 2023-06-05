@@ -20,6 +20,8 @@ data class OrganizerResponse(
     var token: String )
 @Serializable
 data class OrganizerWithoutPswd(
+    @JsonProperty("id")
+    var id: Long ,
     @JsonProperty("name")
     var name: String="",
     @JsonProperty("surname")
