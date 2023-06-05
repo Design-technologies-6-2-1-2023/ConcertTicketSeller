@@ -27,7 +27,7 @@ pattern MVVM (клиент), pattern DAO (сервер);
 Фреймворки для клиентской части: Jetpack Compose, Hilt.
 
 # Документация:
-[Техническое задание](https://docs.google.com/document/d/1V-doTjfKDymV8wawug18wScM_Oo9z477/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true) 
+[Техническое задание](https://docs.google.com/document/d/1V-doTjfKDymV8wawug18wScM_Oo9z477/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
 [Курсовой проект](https://docs.google.com/document/d/15V8hZoPt1lLatRSN1NjlkiLXLzAWUjKB/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
 Также представлена в данном проекте.
 
