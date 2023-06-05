@@ -30,6 +30,7 @@ pattern MVVM (клиент), pattern DAO (сервер);
 [Техническое задание](https://docs.google.com/document/d/1V-doTjfKDymV8wawug18wScM_Oo9z477/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
 [Курсовой проект](https://docs.google.com/document/d/15V8hZoPt1lLatRSN1NjlkiLXLzAWUjKB/edit?usp=sharing&ouid=111021336820288723141&rtpof=true&sd=true)  
 Также представлена в данном проекте.
+[Видеопрезентации проекта](https://drive.google.com/drive/folders/1X-AqW_PGHgOFC8jY2CpknBi0AWcJoG_Q?usp=sharing)  
 
 # Layers:  
 [Серверная часть](https://github.com/Alex07062002/ticketEase)  
