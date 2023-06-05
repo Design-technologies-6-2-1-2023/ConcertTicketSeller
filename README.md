@@ -23,7 +23,7 @@
 Архитектура: язык программирования Kotlin;  
 pattern MVVM (клиент), pattern DAO (сервер);  
 Фреймворки для серверной части: Ktor, Exposed;  
-База данных: PostgerSQL;  
+База данных: PostgreSQL;  
 Фреймворки для клиентской части: Jetpack Compose, Hilt.
 
 # Документация:
