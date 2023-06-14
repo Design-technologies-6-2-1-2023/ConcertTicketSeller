@@ -42,47 +42,57 @@ fun CartNAUser(navController: NavHostController) {
             Box(
                 modifier = Modifier
                     .background(color = colorResource(R.color.white))
+                    .fillMaxHeight()
                 ,
+                contentAlignment = Alignment.BottomCenter
             ) {
 
-                Column(
+                    Box(modifier = Modifier.fillMaxHeight()) {
+                        Column() {
 
-                ) {
 
-                    Box(modifier = Modifier
-                        .padding(top = 20.dp)
-                        .background(colorResource(R.color.find)). height(100.dp).width(400.dp), contentAlignment = Alignment.Center){
-                        Text(text = " Чтобы добавлять товары в корзину войдите или зарегистрируйтесь!",fontSize = 25.sp )
-
-                    }
-
-                    Box(modifier = Modifier.size(100.dp, 160.dp)){
-
-                    }
-                    Box(){
-                        Row(){
-                            Button(
-                                onClick = {navController.navigate("EnterPageByer")  },
+                            Box(
                                 modifier = Modifier
-                                    .height(40.dp)
-                                    .width(200.dp),
-                                border = BorderStroke(3.dp, Color.White),
-                                shape = RoundedCornerShape(50),
-                                colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(R.color.backgroud)),
-
+                                    .padding(top = 20.dp)
+                                    .background(colorResource(R.color.find))
+                                    .height(100.dp)
+                                    .width(400.dp), contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    text = " Чтобы добавлять товары в корзину войдите или зарегистрируйтесь!",
+                                    fontSize = 25.sp
                                 )
-                            {
 
-                                Column {
-                                    Text("Войти", fontSize = 15.sp, color = Color.White)
+                            }
+
+
+                            Box() {
+                                Row() {
+                                    Button(
+                                        onClick = { navController.navigate("EnterPageByer") },
+                                        modifier = Modifier
+                                            .height(40.dp)
+                                            .width(200.dp),
+                                        border = BorderStroke(3.dp, Color.White),
+                                        shape = RoundedCornerShape(50),
+                                        colors = ButtonDefaults.buttonColors(
+                                            backgroundColor = colorResource(
+                                                R.color.backgroud
+                                            )
+                                        ),
+
+                                        )
+                                    {
+
+                                        Column {
+                                            Text("Войти", fontSize = 15.sp, color = Color.White)
+
+                                        }
+                                    }
 
                                 }
                             }
-
                         }
-                    }
-
-                    Box(modifier = Modifier.size(100.dp, 300.dp)){
 
                     }
 
@@ -132,7 +142,7 @@ fun CartNAUser(navController: NavHostController) {
                         }
                         Column {
                             Image(
-                                painterResource(id = R.drawable.shopcart),
+                                painterResource(id = R.drawable.fyncbd0vu9k),
                                 contentDescription = "image",
                                 modifier = Modifier
                                     .size(30.dp, 30.dp)
@@ -165,7 +175,7 @@ fun CartNAUser(navController: NavHostController) {
                         }
                     }
                 }
-                }
+
             }
         }
     }

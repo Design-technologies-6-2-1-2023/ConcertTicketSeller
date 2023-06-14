@@ -28,7 +28,7 @@ fun HelloPage7(navController: NavHostController, viewModel: HelloPage7ViewModel 
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Column(modifier = Modifier.size(300.dp, 900.dp))
+        Column(modifier = Modifier.size(300.dp, 700.dp))
         {
             Box(contentAlignment = Alignment.Center) {
 
@@ -43,7 +43,7 @@ fun HelloPage7(navController: NavHostController, viewModel: HelloPage7ViewModel 
 
                     },
                     modifier = Modifier.padding(top = 100.dp).height(50.dp).width(300.dp)
-                        .offset(y = 270.dp, x = 0.dp),
+                        .offset(y = 220.dp, x = 0.dp),
                     shape = RoundedCornerShape(50),
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = colorResource(R.color.white)
@@ -65,7 +65,7 @@ fun HelloPage7(navController: NavHostController, viewModel: HelloPage7ViewModel 
                             navController.navigate("CatalogNAUser") else if(viewModel.roleState == Role.ORGANIZER.toString())
                             navController.navigate("EnterPageOrg")                  },
                     modifier = Modifier.padding(top = 10.dp).height(50.dp).width(300.dp)
-                        .offset(y = 270.dp, x = 0.dp),
+                        .offset(y = 220.dp, x = 0.dp),
                     shape = RoundedCornerShape(50),
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = colorResource(R.color.white)
@@ -88,7 +88,7 @@ fun HelloPage7(navController: NavHostController, viewModel: HelloPage7ViewModel 
                             navController.navigate("EnterPageOrg")
                     },
                     modifier = Modifier.padding(top = 10.dp).height(50.dp).width(300.dp)
-                        .offset(y = 270.dp, x = 0.dp),
+                        .offset(y = 220.dp, x = 0.dp),
                     shape = RoundedCornerShape(50),
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = colorResource(R.color.white)

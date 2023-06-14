@@ -53,7 +53,7 @@ fun Preference(navController: NavHostController, viewModel : ViewModelPreference
                     .background(color = colorResource(R.color.white)),
                 contentAlignment = Alignment.BottomCenter
             ) {
-                Box(modifier = Modifier.padding(bottom = 70.dp)) {
+                Box(modifier = Modifier.padding(bottom = 70.dp).fillMaxHeight()) {
 
                     Column(
                         modifier = Modifier

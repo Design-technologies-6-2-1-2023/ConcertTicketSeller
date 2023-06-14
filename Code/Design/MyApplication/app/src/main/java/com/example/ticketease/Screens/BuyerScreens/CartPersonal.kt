@@ -37,79 +37,91 @@ fun CartPersonal(navController: NavHostController, viewModel : ViewModelCartPers
             .height(730.dp)
             .background(Color.White)
     ) {
-        Column{
+        Column() {
+
             Box(
                 modifier = Modifier
-                    .background(color = Color.White)
-                    .height(50.dp)
-                    .fillMaxWidth(),
-                contentAlignment = Alignment.TopCenter
+                    .background(color = colorResource(R.color.white))
+                    .fillMaxHeight(),
+                contentAlignment = Alignment.BottomCenter
             ) {
-                Column(modifier = Modifier.padding(5.dp)) {
-                    Text("Корзина", fontSize = 25.sp, color = Color.Black)
 
-                }
-            }
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(730.dp)
-                    .background(Color.White)
-                    .wrapContentSize(Alignment.TopCenter)
-                    .verticalScroll(rememberScrollState())
-            ) {
-                var totalPrice = 0.0 // Переменная для хранения суммы цен всех билетов
-                for (ticket in events.value){
-                    ListItemCart(cost = ticket.price,
-                        location = ticket.location,
-                        date = Instant.ofEpochMilli(ticket.date),
-                        name = ticket.name,
-                        ID =  R.drawable.vkz)
-                    totalPrice += ticket.price
-                }
-                Text(
-                    text = "Итого: " + totalPrice + " р",
-                    fontSize = 20.sp,
-                    modifier = Modifier.padding(top = 10.dp),
-                    color = Color.Black
-                )
-                Text(
-                    text = "Способ оплаты: СБП",
-                    fontSize = 20.sp,
-                    modifier = Modifier
-                        .padding(top = 10.dp)
-                        .offset(10.dp, 0.dp),
-                    color = Color.Black
-                )
-                    Button(
-                        onClick = {
-                            viewModel.updateTicket()
-                            navController.navigate("SuccessfulOrder")
-                                  },
+                Box(modifier = Modifier.fillMaxHeight()) {
+                    Box(
                         modifier = Modifier
-                            .padding(top = 10.dp)
-                            .height(60.dp)
-                            .width(250.dp)
-                            .offset(80.dp, 0.dp),
-                       shape = RoundedCornerShape(50),
-                        colors = ButtonDefaults.buttonColors(
-                            backgroundColor = colorResource(
-                                R.color.backgroud
-                            )
-                        ),
-
-                        )
-                    {
-                        Column {
-                            Text("Оформить заказ", fontSize = 25.sp, color = Color.White)
+                            .background(color = Color.White)
+                            .height(50.dp)
+                            .fillMaxWidth(),
+                        contentAlignment = Alignment.TopCenter
+                    ) {
+                        Column(modifier = Modifier.padding(5.dp)) {
+                            Text("Корзина", fontSize = 25.sp, color = Color.Black)
 
                         }
                     }
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(730.dp)
+                            .background(Color.White)
+                            .wrapContentSize(Alignment.TopCenter)
+                            .verticalScroll(rememberScrollState())
+                    ) {
+                        var totalPrice = 0.0 // Переменная для хранения суммы цен всех билетов
+                        for (ticket in events.value) {
+                            ListItemCart(
+                                cost = ticket.price,
+                                location = ticket.location,
+                                date = Instant.ofEpochMilli(ticket.date),
+                                name = ticket.name,
+                                ID = R.drawable.vkz
+                            )
+                            totalPrice += ticket.price
+                        }
+                        Text(
+                            text = "Итого: " + totalPrice + " р",
+                            fontSize = 20.sp,
+                            modifier = Modifier.padding(top = 10.dp),
+                            color = Color.Black
+                        )
+                        Text(
+                            text = "Способ оплаты: СБП",
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(top = 10.dp)
+                                .offset(10.dp, 0.dp),
+                            color = Color.Black
+                        )
+                        Button(
+                            onClick = {
+                                viewModel.updateTicket()
+                                navController.navigate("SuccessfulOrder")
+                            },
+                            modifier = Modifier
+                                .padding(top = 10.dp)
+                                .height(60.dp)
+                                .width(250.dp),
+                            shape = RoundedCornerShape(50),
+                            colors = ButtonDefaults.buttonColors(
+                                backgroundColor = colorResource(
+                                    R.color.backgroud
+                                )
+                            ),
+
+                            )
+                        {
+                            Column {
+                                Text("Оформить заказ", fontSize = 25.sp, color = Color.White)
+
+                            }
+                        }
+                    }
                 }
-            panel(navController = navController)
-                }
+                panel(navController = navController)
             }
         }
+    }}
+
 
 @Composable
 fun panel(navController: NavHostController){
@@ -165,7 +177,7 @@ fun panel(navController: NavHostController){
             }
             Column {
                 Image(
-                    painterResource(id = R.drawable.free_icon_shopping_cart_481384_bhbaq__1__0phyx),
+                    painterResource(id = R.drawable.fyncbd0vu9k),
                     contentDescription = "image",
                     modifier = Modifier
                         .size(30.dp, 30.dp)

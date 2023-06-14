@@ -52,11 +52,10 @@ import java.time.Instant
             Box(
                 modifier = Modifier
                     .background(color = colorResource(R.color.white))
-                    .fillMaxHeight()
                 ,
                 contentAlignment = Alignment.BottomCenter
             ) {
-                Box(modifier = Modifier.padding(bottom = 70.dp)) {
+                Box(modifier = Modifier.padding(bottom = 70.dp).fillMaxHeight()) {
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()

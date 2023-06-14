@@ -31,7 +31,7 @@ fun PersonalNAUSer(navController: NavHostController, viewModel: ViewModelNAUserP
 
     Box(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxHeight()
             .background(Color.White)
     ) {
         Column() {
@@ -48,78 +48,73 @@ fun PersonalNAUSer(navController: NavHostController, viewModel: ViewModelNAUserP
 
                 }
             }
-            Column() {
-                Box(
-                    modifier = Modifier
-                        .background(color = colorResource(R.color.white))
-                        .fillMaxHeight(),
-                ) {
+            Column(  ) {
 
-                    Column() {
+                    Box(modifier = Modifier.fillMaxHeight(),contentAlignment = Alignment.BottomCenter
+                    ) {
+                        Column() {
 
-                        Box() {
-                            Column() {
-                                Text(
-                                    "Ваш город",
-                                    fontSize = 25.sp,
-                                    color = Color.Black,
-                                    fontWeight = FontWeight.Bold
-                                )
-                                Row() {
+                            Box(modifier = Modifier.fillMaxHeight()) {
+                                Column() {
                                     Text(
-                                        city,
+                                        "Ваш город",
                                         fontSize = 25.sp,
-                                        color = Color.Black
+                                        color = Color.Black,
+                                        fontWeight = FontWeight.Bold
                                     )
-                                    Box(modifier = Modifier.width(25.dp)) {
+                                    Row() {
+                                        Text(
+                                            city,
+                                            fontSize = 25.sp,
+                                            color = Color.Black
+                                        )
+                                        Box(modifier = Modifier.width(25.dp)) {
+
+                                        }
+                                        Image(
+                                            painterResource(id = R.drawable.oeemhqaf_transformed),
+                                            contentDescription = "image",
+                                            modifier = Modifier
+                                                .size(25.dp, 25.dp)
+                                                .clickable() {
+                                                    navController.navigate("CitySelectorNAUser")
+                                                },
+                                            contentScale = ContentScale.Crop,
+
+                                            )
 
                                     }
-                                    Image(
-                                        painterResource(id = R.drawable.oeemhqaf_transformed),
-                                        contentDescription = "image",
+                                    Box(modifier = Modifier.size(100.dp, 100.dp)) {
+
+                                    }
+
+
+                                    Button(
+                                        onClick = { navController.navigate("EnterPageByer") },
                                         modifier = Modifier
-                                            .size(25.dp, 25.dp)
-                                            .clickable() {
-                                                navController.navigate("CitySelectorNAUser")
-                                            },
-                                        contentScale = ContentScale.Crop,
+                                            .height(50.dp)
+                                            .width(350.dp),
+                                        border = BorderStroke(
+                                            3.dp,
+                                            colorResource(R.color.backgroud)
+                                        ),
+                                        shape = RoundedCornerShape(50),
+                                        colors = ButtonDefaults.buttonColors(
+                                            backgroundColor = colorResource(
+                                                R.color.backgroud
+                                            )
+                                        ),
 
                                         )
+                                    {
 
-                                }
-                                Box(modifier = Modifier.size(100.dp, 100.dp)){
+                                        Column {
+                                            Text("Вoйти", fontSize = 25.sp, color = Color.White)
 
-                                }
-
-
-                                Button(
-                                    onClick = { navController.navigate("EnterPageByer") },
-                                    modifier = Modifier
-                                        .height(50.dp)
-                                        .width(350.dp),
-                                    border = BorderStroke(
-                                        3.dp,
-                                        colorResource(R.color.backgroud)
-                                    ),
-                                    shape = RoundedCornerShape(50),
-                                    colors = ButtonDefaults.buttonColors(
-                                        backgroundColor = colorResource(
-                                            R.color.backgroud
-                                        )
-                                    ),
-
-                                    )
-                                {
-
-                                    Column {
-                                        Text("Вoйти", fontSize = 25.sp, color = Color.White)
-
+                                        }
                                     }
                                 }
                             }
-                        }
-                        Box(modifier = Modifier.size(100.dp, 410.dp)){
-
                         }
 
 
@@ -219,5 +214,6 @@ fun PersonalNAUSer(navController: NavHostController, viewModel: ViewModelNAUserP
             }
             }
         }
-    }
+
+
 

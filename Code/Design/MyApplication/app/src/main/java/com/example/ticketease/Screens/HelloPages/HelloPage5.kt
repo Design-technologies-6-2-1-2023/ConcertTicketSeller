@@ -31,7 +31,7 @@ fun HelloPage5(navController: NavHostController, viewModel: HelloPage5ViewModel 
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Column(modifier= Modifier.size(320.dp, 900.dp))
+        Column(modifier= Modifier.size(300.dp, 700.dp))
         {
             Box(contentAlignment = Alignment.TopStart) {
                 Column{

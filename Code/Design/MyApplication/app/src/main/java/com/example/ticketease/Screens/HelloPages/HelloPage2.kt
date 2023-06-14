@@ -20,7 +20,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.ticketease.R
-
 @Composable
 fun HelloPage2(navController: NavHostController) {
 
@@ -31,14 +30,14 @@ fun HelloPage2(navController: NavHostController) {
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Column(modifier= Modifier.size(320.dp, 900.dp))
+        Column(modifier= Modifier.size(300.dp, 700.dp))
         {
             Box(contentAlignment = Alignment.TopStart) {
-                Column() {
+                Column{
                     Box(modifier = Modifier.size(10.dp, 10.dp)) {
 
                     }
-                    Row() {
+                    Row{
                         Box(modifier = Modifier.size(270.dp, 10.dp)) {
 
                         }
@@ -47,29 +46,25 @@ fun HelloPage2(navController: NavHostController) {
                             contentDescription = "image",
                             modifier = Modifier.size(70.dp, 70.dp).clickable{
                                 navController .navigate("HelloPage5")
-
                             }
 
                         )
                     }
                 }
             }
-            Box(contentAlignment = Alignment.TopStart) {
+            Box(contentAlignment = Alignment.Center) {
+
                 Image(
                     painterResource(id = R.drawable.ticketease__1__transformed),
                     contentDescription = "image",
-                    alignment = Alignment.TopEnd,
-                    modifier = Modifier
-                        .width(275.dp)
-                        .align(alignment = Alignment.TopEnd)
-                        .offset(y = 20.dp, x = -100.dp),
+                    modifier = Modifier.size(200.dp, 100.dp),
                     contentScale = ContentScale.Crop
                 )
             }
             Box(contentAlignment = Alignment.Center) {
-                Column(modifier= Modifier.size(450.dp, 250.dp).offset(y = -40.dp, x = -20.dp)) {
+                Column(modifier= Modifier.size(300.dp, 300.dp)) {
                     Text(
-                        text = "Бесплатное и простое бронирование",
+                        text = "Бесплатная и простая бронирование",
                         fontSize = 32.sp,
                         lineHeight = 50.sp,
                         color = Color.White
@@ -86,10 +81,7 @@ fun HelloPage2(navController: NavHostController) {
 
                 Button(
                     onClick = {navController.navigate("HelloPage3")},
-                    modifier = Modifier
-                        .height(50.dp)
-                        .offset(y = 85.dp, x = 65.dp)
-                        .width(170.dp),
+                    modifier = Modifier.padding(top = 100.dp).height(50.dp).width(200.dp),
                     border = BorderStroke(3.dp, Color.White),
                     shape = RoundedCornerShape(50),
                     colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(R.color.backgroud)),
@@ -102,20 +94,6 @@ fun HelloPage2(navController: NavHostController) {
 
                     }
                 }
-            }
-
-            Box(contentAlignment = Alignment.TopStart) {
-                Image(
-                    painterResource(id = R.drawable.points2),
-                    contentDescription = "image",
-                    alignment = Alignment.TopEnd,
-                    modifier = Modifier
-                        .height(115.dp)
-                        .align(alignment = Alignment.TopEnd)
-                        .offset(y = 53.dp, x = 100.dp),
-                    contentScale = ContentScale.Crop
-                )
-
             }
 
         }

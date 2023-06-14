@@ -45,129 +45,146 @@ fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hi
 
                 }
             }
-            Column {
+            Column() {
+
                 Box(
                     modifier = Modifier
-                        .background(color = colorResource(R.color.white)),
+                        .background(color = colorResource(R.color.white))
+                        .fillMaxHeight()
+                    ,
                     contentAlignment = Alignment.BottomCenter
                 ) {
 
-                    Column{
+                    Box(modifier = Modifier.fillMaxHeight()) {
 
+                        Column {
 
-                        Button(
-                            onClick = { navController.navigate("PersonalCorrectInformation") },
-                            modifier = Modifier
-                                .padding(top = 15.dp)
-                                .height(95.dp)
-                                .width(450.dp),
-                            colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(
-                                R.color.find)),
-
-                            )
-                        {
-                            Row{
-
-                                Column {
-                                    Image(
-                                        painterResource(id = R.drawable.arrow),
-                                        contentDescription = "image",
-                                        modifier = Modifier
-                                            .size(29.dp, 29.dp)
-                                            .offset(205.dp, 25.dp),
-                                        contentScale = ContentScale.Crop
-                                    )
-                                    Row(
-                                        modifier = Modifier
-                                            .offset((-80).dp, (-20).dp)
-                                    ) {
-                                        Text(buyer.name + " ", fontSize = 20.sp, color = Color.Black)
-                                        Text(buyer.surname, fontSize = 20.sp, color = Color.Black)
-
-                                    }
-                                    Text(
-                                        buyer.mobile.toString(), fontSize = 20.sp, modifier = Modifier
-                                            .offset((-80).dp, (-20).dp), color = Color.Black
-                                    )
-
-
-                                }
-                            }
-                        }
-
-                        Box(modifier = Modifier.padding(20.dp)) {
-                            Spacer(modifier = Modifier.height(60.dp))
-                            Column{
-                                Text(
-                                    "Ваш город",
-                                    fontSize = 25.sp,
-                                    color = Color.Black,
-                                    fontWeight = FontWeight.Bold
-                                )
-                                Row{
-                                    Text(
-                                        city,
-                                        fontSize = 25.sp,
-                                        color = Color.Black
-                                    )
-                                    Box(modifier = Modifier.width(25.dp)) {
-
-                                    }
-                                    Image(
-                                        painterResource(id = R.drawable.oeemhqaf_transformed),
-                                        contentDescription = "image",
-                                        modifier = Modifier
-                                            .size(25.dp, 25.dp)
-                                            .clickable{
-                                                      navController.navigate("CitySelector")
-                                                      },
-                                        contentScale = ContentScale.Crop,
-
-                                        )
-
-                                }
-                                Spacer(modifier = Modifier.height(40.dp))
-
-
-                            }
-                        }
-
-                        Box(
-                            contentAlignment = Alignment.Center,
-                            modifier = Modifier.padding(50.dp)
-                        ) {
 
                             Button(
-                                onClick = {
-                                    viewModel.del
-                                    navController.navigate("HelloPage5")  },
+                                onClick = { navController.navigate("PersonalCorrectInformation") },
                                 modifier = Modifier
-                                    .height(50.dp)
-                                    .offset(0.dp, 45.dp)
-                                    .width(350.dp),
-                                shape = RoundedCornerShape(50),
+                                    .padding(top = 15.dp)
+                                    .height(95.dp)
+                                    .width(450.dp),
                                 colors = ButtonDefaults.buttonColors(
                                     backgroundColor = colorResource(
-                                        R.color.backgroud
+                                        R.color.find
                                     )
                                 ),
 
                                 )
                             {
+                                Row {
 
+                                    Column {
+                                        Image(
+                                            painterResource(id = R.drawable.arrow),
+                                            contentDescription = "image",
+                                            modifier = Modifier
+                                                .size(29.dp, 29.dp)
+                                                .offset(205.dp, 25.dp),
+                                            contentScale = ContentScale.Crop
+                                        )
+                                        Row(
+                                            modifier = Modifier
+                                                .offset((-80).dp, (-20).dp)
+                                        ) {
+                                            Text(
+                                                buyer.name + " ",
+                                                fontSize = 20.sp,
+                                                color = Color.Black
+                                            )
+                                            Text(
+                                                buyer.surname,
+                                                fontSize = 20.sp,
+                                                color = Color.Black
+                                            )
+
+                                        }
+                                        Text(
+                                            buyer.mobile.toString(),
+                                            fontSize = 20.sp,
+                                            modifier = Modifier
+                                                .offset((-80).dp, (-20).dp),
+                                            color = Color.Black
+                                        )
+
+
+                                    }
+                                }
+                            }
+
+
+
+                            Box(modifier = Modifier.padding(20.dp)) {
+                                Spacer(modifier = Modifier.height(60.dp))
                                 Column {
-                                    Text("Выйти", fontSize = 25.sp, color = Color.White)
+                                    Text(
+                                        "Ваш город",
+                                        fontSize = 25.sp,
+                                        color = Color.Black,
+                                        fontWeight = FontWeight.Bold
+                                    )
+                                    Row {
+                                        Text(
+                                            city,
+                                            fontSize = 25.sp,
+                                            color = Color.Black
+                                        )
+                                        Box(modifier = Modifier.width(25.dp)) {
+
+                                        }
+                                        Image(
+                                            painterResource(id = R.drawable.oeemhqaf_transformed),
+                                            contentDescription = "image",
+                                            modifier = Modifier
+                                                .size(25.dp, 25.dp)
+                                                .clickable {
+                                                    navController.navigate("CitySelector")
+                                                },
+                                            contentScale = ContentScale.Crop,
+
+                                            )
+
+                                    }
+                                    Spacer(modifier = Modifier.height(40.dp))
+
 
                                 }
                             }
-                        }
-                        Box(modifier = Modifier
-                            .padding(top = 15.dp)
-                            .height(185.dp)
-                            .width(450.dp)){
 
-                        }
+                            Box(
+                                contentAlignment = Alignment.Center,
+                                modifier = Modifier.padding(50.dp)
+                            ) {
 
+                                Button(
+                                    onClick = {
+                                        viewModel.del
+                                        navController.navigate("HelloPage5")
+                                    },
+                                    modifier = Modifier
+                                        .height(50.dp)
+                                        .offset(0.dp, 45.dp)
+                                        .width(350.dp),
+                                    shape = RoundedCornerShape(50),
+                                    colors = ButtonDefaults.buttonColors(
+                                        backgroundColor = colorResource(
+                                            R.color.backgroud
+                                        )
+                                    ),
+
+                                    )
+                                {
+
+                                    Column {
+                                        Text("Выйти", fontSize = 25.sp, color = Color.White)
+
+                                    }
+                                }
+                            }
+                        }
+                    }
                         Box(
                             modifier = Modifier
                                 .background(color = colorResource(R.color.white))
@@ -266,4 +283,4 @@ fun Personal(navController: NavHostController, viewModel: ViewModelPersonal = hi
 
         }
     }
-}
+

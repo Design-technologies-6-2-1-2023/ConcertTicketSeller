@@ -25,12 +25,13 @@ import com.example.ticketease.R
 @Composable
 fun HelloPage6(navController: NavHostController) {
     Box(
+
         modifier = Modifier
             .background(color = colorResource(R.color.backgroud))
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Column(modifier= Modifier.size(320.dp, 900.dp))
+        Column(modifier= Modifier.size(300.dp, 600.dp))
         {
             Box(contentAlignment = Alignment.TopStart) {
                 Column{
@@ -57,15 +58,12 @@ fun HelloPage6(navController: NavHostController) {
                 Image(
                     painterResource(id = R.drawable.ticketease__4__transformed),
                     contentDescription = "image",
-                    modifier = Modifier
-                        .width(280.dp)
-                        .align(alignment = Alignment.TopEnd)
-                        .offset(y = 25.dp, x = (-105).dp),
+                    modifier = Modifier.size(200.dp, 100.dp),
                     contentScale = ContentScale.Crop
                 )
             }
             Box(contentAlignment = Alignment.Center) {
-                Column(modifier = Modifier.size(300.dp, 250.dp).offset(y = (-55).dp, x = (-20).dp)) {
+                Column(modifier = Modifier.size(300.dp, 300.dp)) {
                     Text(
                         text = "Осталось только выбрать город",
                         fontSize = 32.sp,
@@ -78,10 +76,7 @@ fun HelloPage6(navController: NavHostController) {
 
                 Button(
                     onClick = {navController.navigate("HelloPage7")},
-                    modifier = Modifier
-                        .height(50.dp)
-                        .offset(y = 72.dp, x = 65.dp)
-                        .width(170.dp),
+                    modifier = Modifier.padding(top = 100.dp).height(50.dp).width(200.dp),
                     border = BorderStroke(3.dp, Color.White),
                     shape = RoundedCornerShape(50),
                     colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(R.color.backgroud)),

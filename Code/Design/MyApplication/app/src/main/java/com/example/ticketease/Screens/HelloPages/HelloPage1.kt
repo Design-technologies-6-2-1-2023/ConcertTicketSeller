@@ -30,15 +30,14 @@ fun HelloPage1(navController: NavHostController) {
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-
-        Column(modifier= Modifier.size(320.dp, 900.dp))
+        Column(modifier= Modifier.size(300.dp, 700.dp))
         {
             Box(contentAlignment = Alignment.TopStart) {
-                Column() {
+                Column{
                     Box(modifier = Modifier.size(10.dp, 10.dp)) {
 
                     }
-                    Row() {
+                    Row{
                         Box(modifier = Modifier.size(270.dp, 10.dp)) {
 
                         }
@@ -53,35 +52,29 @@ fun HelloPage1(navController: NavHostController) {
                     }
                 }
             }
-            Box(contentAlignment = Alignment.TopStart) {
+            Box(contentAlignment = Alignment.Center) {
                 Image(
                     painterResource(id = R.drawable.ticketease_sjr_0b_k8_transformed),
                     contentDescription = "image",
-                    alignment = Alignment.TopEnd,
-                    modifier = Modifier
-                        .width(275.dp)
-                        .align(alignment = Alignment.TopEnd)
-                        .offset(y = -20.dp, x = -20.dp),
+                    modifier = Modifier.size(200.dp, 100.dp),
                     contentScale = ContentScale.Crop
                 )
 
             }
-            Box(contentAlignment = Alignment.TopStart) {
-                Column(modifier = Modifier
-                    .size(300.dp, 250.dp)
-                    .offset(y = -125.dp, x = -20.dp)) {
+            Box(contentAlignment = Alignment.Center) {
+                Column(modifier= Modifier.size(300.dp, 300.dp)) {
+
+
                     Text(
                         text = "Мероприятия на любой вкус",
-
                         fontSize = 32.sp,
                         lineHeight = 50.sp,
-                        color = Color.White,style = MaterialTheme.typography.body2,
+                        color = Color.White
                     )
                     Text(
-                        style = MaterialTheme.typography.body2,
                         text = "Спектакли, концерты, мюзиклы, выставки, экскурсии, балет и многое другое",
                         fontSize = 20.sp,
-                        lineHeight = 30.sp, color = Color.White,
+                        lineHeight = 30.sp, color = Color.White
                     )
                 }
             }
@@ -93,9 +86,9 @@ fun HelloPage1(navController: NavHostController) {
                 Button(
                     onClick = { navController.navigate("HelloPage2")},
                     modifier = Modifier
+                        .padding(top = 100.dp)
                         .height(50.dp)
-                        .offset(y = 0.dp, x = 65.dp)
-                        .width(170.dp),
+                        .width(200.dp),
                     border = BorderStroke(3.dp, Color.White),
                     shape = RoundedCornerShape(50),
                     colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(R.color.backgroud)),
@@ -108,20 +101,6 @@ fun HelloPage1(navController: NavHostController) {
 
                     }
                 }
-            }
-
-            Box(contentAlignment = Alignment.TopStart) {
-                Image(
-                    painterResource(id = R.drawable.points1),
-                    contentDescription = "image",
-                    alignment = Alignment.TopEnd,
-                    modifier = Modifier
-                        .height(235.dp)
-                        .align(alignment = Alignment.TopEnd)
-                        .offset(y = -30.dp, x = 100.dp),
-                    contentScale = ContentScale.Crop
-                )
-
             }
 
         }
