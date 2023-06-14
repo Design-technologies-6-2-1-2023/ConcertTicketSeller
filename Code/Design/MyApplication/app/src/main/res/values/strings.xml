@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">testCompose</string>
+    <string name="app_name">ticketease</string>
     <string name="BigTextWelcomePage1">Мероприятия на любой вкус</string>
     <string name="SmallTextWelcomePage1">Спектакли, концерты, мюзиклы, выставки, экскурсии, балет и многое другое</string>
     <string name="NextWelcomePage1">Далее</string>
