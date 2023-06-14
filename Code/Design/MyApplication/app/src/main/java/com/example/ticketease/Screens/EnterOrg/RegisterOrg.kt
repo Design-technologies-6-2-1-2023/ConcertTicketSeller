@@ -77,7 +77,7 @@ fun RegisterOrg(navController: NavHostController, viewModel: ViewModelRegistOrg 
                     onValueChange = { viewModel.register(RegisterStateTextFieldsOrg.Name(it)) },
                     placeholder = { Text(text = "Имя") },
                     modifier = Modifier
-                        .padding(5.dp).clickable(){
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind)).clickable(){
                             val locale = Locale("ru")
                             Locale.setDefault(locale)
                             val resources = context.resources
@@ -92,7 +92,7 @@ fun RegisterOrg(navController: NavHostController, viewModel: ViewModelRegistOrg 
                     onValueChange = { viewModel.register(RegisterStateTextFieldsOrg.Surname(it)) },
                     placeholder = { Text(text = "Фамилия") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
                     ,
                 )
                 TextField(
@@ -100,7 +100,7 @@ fun RegisterOrg(navController: NavHostController, viewModel: ViewModelRegistOrg 
                     onValueChange = {viewModel.register(RegisterStateTextFieldsOrg.Login(it))},
                     placeholder = { Text(text = "Логин") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
                     ,
 
                     )
@@ -109,7 +109,7 @@ fun RegisterOrg(navController: NavHostController, viewModel: ViewModelRegistOrg 
                     onValueChange = {viewModel.register(RegisterStateTextFieldsOrg.Email(it))},
                     placeholder = { Text(text = "email") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
                     ,
                 )
 
@@ -118,7 +118,7 @@ fun RegisterOrg(navController: NavHostController, viewModel: ViewModelRegistOrg 
                     onValueChange = { viewModel.register(RegisterStateTextFieldsOrg.Mobile(it))},
                     placeholder = { Text(text = "Номер телефона") },
                     modifier = Modifier
-                        .padding(5.dp),
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind)),
                 )
 
                 TextField(
@@ -126,7 +126,7 @@ fun RegisterOrg(navController: NavHostController, viewModel: ViewModelRegistOrg 
                     onValueChange = { viewModel.register(RegisterStateTextFieldsOrg.Password(it))},
                     placeholder = { Text(text = "Пароль") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
                     ,
                 )
 
@@ -135,7 +135,7 @@ fun RegisterOrg(navController: NavHostController, viewModel: ViewModelRegistOrg 
                     onValueChange = { viewModel.register(RegisterStateTextFieldsOrg.RepeatPassword(it))},
                     placeholder = { Text(text = "Подтверждение пароля") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
                     ,
                 )
 

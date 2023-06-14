@@ -80,7 +80,7 @@ fun AvtorizeByer(navController: NavHostController, viewModel: ViewModelAvtBuyer 
                         onValueChange = {viewModel.avtorize(AvtStateTextFields.Login(it))},
                         placeholder = { Text(text = "Логин") },
                         modifier = Modifier
-                            .padding(5.dp)
+                            .padding(5.dp).background(color=colorResource(R.color.greyfind))
                         ,
 
                         )
@@ -89,7 +89,7 @@ fun AvtorizeByer(navController: NavHostController, viewModel: ViewModelAvtBuyer 
                         onValueChange = { viewModel.avtorize(AvtStateTextFields.Password(it))},
                         placeholder = { Text(text = "Пароль") },
                         modifier = Modifier
-                            .padding(5.dp)
+                            .padding(5.dp).background(color=colorResource(R.color.greyfind))
                         ,
                     )
 

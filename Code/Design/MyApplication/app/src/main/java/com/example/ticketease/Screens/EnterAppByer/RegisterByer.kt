@@ -78,7 +78,7 @@ fun RegisterBuyer(navController: NavHostController, viewModel: ViewModelRegistBu
                     onValueChange = { viewModel.register(RegisterStateTextFields.Name(it)) },
                     placeholder = { Text(text = "Имя") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
 
                 )
                 TextField(
@@ -86,7 +86,7 @@ fun RegisterBuyer(navController: NavHostController, viewModel: ViewModelRegistBu
                     onValueChange = { viewModel.register(RegisterStateTextFields.Surname(it)) },
                     placeholder = { Text(text = "Фамилия") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
                     ,
                 )
                 TextField(
@@ -94,7 +94,7 @@ fun RegisterBuyer(navController: NavHostController, viewModel: ViewModelRegistBu
                     onValueChange = {viewModel.register(RegisterStateTextFields.Login(it))},
                     placeholder = { Text(text = "Логин") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
                     ,
 
                     )
@@ -103,7 +103,7 @@ fun RegisterBuyer(navController: NavHostController, viewModel: ViewModelRegistBu
                     onValueChange = {viewModel.register(RegisterStateTextFields.Email(it))},
                     placeholder = { Text(text = "email") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
                     ,
                 )
 
@@ -112,7 +112,7 @@ fun RegisterBuyer(navController: NavHostController, viewModel: ViewModelRegistBu
                         onValueChange = { viewModel.register(RegisterStateTextFields.Mobile(it))},
                         placeholder = { Text(text = "Номер телефона") },
                         modifier = Modifier
-                            .padding(5.dp),
+                            .padding(5.dp).background(color=colorResource(R.color.greyfind)),
                         )
 
                 TextField(
@@ -120,7 +120,7 @@ fun RegisterBuyer(navController: NavHostController, viewModel: ViewModelRegistBu
                     onValueChange = { viewModel.register(RegisterStateTextFields.Password(it))},
                     placeholder = { Text(text = "Пароль") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
                     ,
                 )
 
@@ -129,7 +129,7 @@ fun RegisterBuyer(navController: NavHostController, viewModel: ViewModelRegistBu
                     onValueChange = { viewModel.register(RegisterStateTextFields.RepeatPassword(it))},
                     placeholder = { Text(text = "Подтверждение пароля") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
                     ,
                 )
 

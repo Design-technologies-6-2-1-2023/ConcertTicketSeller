@@ -102,7 +102,7 @@ fun PersonalCorrectInformation(navController: NavHostController, viewModel: View
                         onValueChange = { viewModel.update(UpdateBuyerStateTextFields.Name(it)) },
                         placeholder = { Text(text = "Имя") },
                         modifier = Modifier
-                            .padding(5.dp)
+                            .padding(5.dp).background(color=colorResource(R.color.greyfind))
 
                     )
                     TextField(
@@ -110,7 +110,7 @@ fun PersonalCorrectInformation(navController: NavHostController, viewModel: View
                         onValueChange = { viewModel.update(UpdateBuyerStateTextFields.Surname(it)) },
                         placeholder = { Text(text = "Фамилия") },
                         modifier = Modifier
-                            .padding(5.dp)
+                            .padding(5.dp).background(color=colorResource(R.color.greyfind))
                         ,
                     )
 
@@ -119,7 +119,7 @@ fun PersonalCorrectInformation(navController: NavHostController, viewModel: View
                         onValueChange = {viewModel.update(UpdateBuyerStateTextFields.Email(it))},
                         placeholder = { Text(text = "email") },
                         modifier = Modifier
-                            .padding(5.dp)
+                            .padding(5.dp).background(color=colorResource(R.color.greyfind))
                         ,
                     )
 
@@ -128,7 +128,7 @@ fun PersonalCorrectInformation(navController: NavHostController, viewModel: View
                         onValueChange = { viewModel.update(UpdateBuyerStateTextFields.Mobile(it))},
                         placeholder = { Text(text = "Номер телефона") },
                         modifier = Modifier
-                            .padding(5.dp),
+                            .padding(5.dp).background(color=colorResource(R.color.greyfind)),
                     )
 
                     Button(

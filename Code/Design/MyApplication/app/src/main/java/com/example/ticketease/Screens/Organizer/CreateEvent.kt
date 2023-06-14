@@ -57,7 +57,7 @@ fun CreateEvent(navController: NavHostController, viewModel: ViewModelEnterParam
                     onValueChange = { viewModel.enter(EnterParamStateTextFields.Name(it)) },
                     placeholder = { Text(text = "Название мероприятия") },
                     modifier = Modifier
-                        .padding(5.dp),
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind)),
                 )
 
                 TextField(
@@ -65,35 +65,35 @@ fun CreateEvent(navController: NavHostController, viewModel: ViewModelEnterParam
                     onValueChange = { viewModel.enter(EnterParamStateTextFields.Cost(it)) },
                     placeholder = { Text(text = "Стоимость мерпориятия") },
                     modifier = Modifier
-                        .padding(5.dp),
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind)),
                 )
                 TextField(
                     value = state.type,
                     onValueChange = { viewModel.enter(EnterParamStateTextFields.Type(it)) },
                     placeholder = { Text(text = "Тип мероприятия") },
                     modifier = Modifier
-                        .padding(5.dp),
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind)),
                 )
                 TextField(
                     value = state.genre,
                     onValueChange = { viewModel.enter(EnterParamStateTextFields.Genre(it)) },
                     placeholder = { Text(text = "Жанр мероприятия") },
                     modifier = Modifier
-                        .padding(5.dp),
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind)),
                 )
                 TextField(
                     value = state.nameGroup.toString(),
                     onValueChange = { viewModel.enter(EnterParamStateTextFields.NameGroup(it)) },
                     placeholder = { Text(text = "Название коллектива") },
                     modifier = Modifier
-                        .padding(5.dp),
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind)),
                 )
                 TextField(
                     value = state.description.toString(),
                     onValueChange = { viewModel.enter(EnterParamStateTextFields.Description(it)) },
                     placeholder = { Text(text = "Описание") },
                     modifier = Modifier
-                        .padding(5.dp).height(130.dp),
+                        .padding(5.dp).height(130.dp).background(color=colorResource(R.color.greyfind)),
                 )
 
                 Box() {

@@ -186,7 +186,7 @@ fun ListItem(eventId : Long, cost:Double, location:String, date: Instant, name:S
                     Box(modifier = Modifier.fillMaxWidth(),
                         contentAlignment = Alignment.TopCenter) {
                         Text(
-                            text = name, fontSize = 25.sp
+                            text = name, fontSize = 25.sp, color= colorResource(R.color.black)
                         )
                     }
 
@@ -246,7 +246,7 @@ fun ListItem(eventId : Long, cost:Double, location:String, date: Instant, name:S
                     Text(
                         text = cost.toString(),
                         modifier = Modifier.offset(20.dp, 20.dp),
-                        fontSize = 15.sp
+                        fontSize = 15.sp,color= colorResource(R.color.black)
                     )
                     Box(modifier = Modifier.width(20.dp)) {
 
@@ -264,7 +264,7 @@ fun ListItem(eventId : Long, cost:Double, location:String, date: Instant, name:S
                     Text(
                         text = location,
                         modifier = Modifier.offset(20.dp, 20.dp),
-                        fontSize = 15.sp
+                        fontSize = 15.sp, color= colorResource(R.color.black)
                     )
                 }
                 Row {
@@ -279,7 +279,7 @@ fun ListItem(eventId : Long, cost:Double, location:String, date: Instant, name:S
                     Text(
                         text = date.toString(),
                         modifier = Modifier.offset(20.dp, 20.dp),
-                        fontSize = 15.sp
+                        fontSize = 15.sp, color= colorResource(R.color.black)
                     )
                 }
 

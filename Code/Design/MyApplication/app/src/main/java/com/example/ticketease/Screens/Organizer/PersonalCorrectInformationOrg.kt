@@ -119,7 +119,7 @@ fun PersonalCorrectInformationOrg(navController: NavHostController, viewModel: V
                         onValueChange = { viewModel.update(UpdateOrgStateTextFields.Name(it)) },
                         placeholder = { Text(text = "Имя") },
                         modifier = Modifier
-                            .padding(5.dp)
+                            .padding(5.dp).background(color=colorResource(R.color.greyfind))
 
                     )
                     TextField(
@@ -127,7 +127,7 @@ fun PersonalCorrectInformationOrg(navController: NavHostController, viewModel: V
                         onValueChange = { viewModel.update(UpdateOrgStateTextFields.Surname(it)) },
                         placeholder = { Text(text = "Фамилия") },
                         modifier = Modifier
-                            .padding(5.dp)
+                            .padding(5.dp).background(color=colorResource(R.color.greyfind))
                         ,
                     )
 
@@ -136,7 +136,7 @@ fun PersonalCorrectInformationOrg(navController: NavHostController, viewModel: V
                         onValueChange = {viewModel.update(UpdateOrgStateTextFields.Email(it))},
                         placeholder = { Text(text = "email") },
                         modifier = Modifier
-                            .padding(5.dp)
+                            .padding(5.dp).background(color=colorResource(R.color.greyfind))
                         ,
                     )
 
@@ -145,7 +145,7 @@ fun PersonalCorrectInformationOrg(navController: NavHostController, viewModel: V
                         onValueChange = { viewModel.update(UpdateOrgStateTextFields.Mobile(it))},
                         placeholder = { Text(text = "Номер телефона") },
                         modifier = Modifier
-                            .padding(5.dp),
+                            .padding(5.dp).background(color=colorResource(R.color.greyfind)),
                     )
                     Button(
                         onClick = {  if (!viewModel.flag) {

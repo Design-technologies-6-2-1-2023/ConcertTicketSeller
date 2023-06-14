@@ -70,7 +70,7 @@ fun AvtorizeOrg(navController: NavHostController, viewModel: ViewModelAvtOrg = h
                     onValueChange = {viewModel.avtorize(AvtStateTextFieldsOrg.Login(it))},
                     placeholder = { Text(text = "Логин") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
                     ,
 
                     )
@@ -79,7 +79,7 @@ fun AvtorizeOrg(navController: NavHostController, viewModel: ViewModelAvtOrg = h
                     onValueChange = { viewModel.avtorize(AvtStateTextFieldsOrg.Password(it))},
                     placeholder = { Text(text = "Пароль") },
                     modifier = Modifier
-                        .padding(5.dp)
+                        .padding(5.dp).background(color=colorResource(R.color.greyfind))
                     ,
                 )
 
